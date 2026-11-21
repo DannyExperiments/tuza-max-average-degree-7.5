@@ -1,0 +1,73 @@
+{
+  "good_labelled_one_sided_links": 4667,
+  "total_classes": 3286,
+  "total_labelled": 451235,
+  "banks": {
+    "PAIR_ONE_DEFECT.json.gz": {
+      "orbits": 986,
+      "labelled": 157312,
+      "all_cross_checks": 15776,
+      "sha256": "cccfff94d3c9825425e7d7d59d35c6b430868e97bfd5d14e45306cb5a5b622ba"
+    },
+    "PAIR_TRANSFER.json.gz": {
+      "orbits": 3245,
+      "labelled": 450258,
+      "all_cross_checks": 51920,
+      "sha256": "53d637937ed981883a1cf1b29de4a5181dafad8701b57188cee10e6a22ead015"
+    },
+    "PAIR_DIRECT.json.gz": {
+      "orbits": 38,
+      "labelled": 971,
+      "all_cross_checks": 608,
+      "sha256": "92e14cd262ff324d9f2d00137123d69aa00522350db0ded515046530bc0d5704"
+    }
+  },
+  "profiles": {
+    "()": 1144,
+    "(6,)": 986,
+    "(6, 6)": 544,
+    "(6, 6, 6)": 137,
+    "(6, 6, 6, 6)": 42,
+    "(6, 6, 6, 7)": 20,
+    "(6, 6, 7)": 55,
+    "(6, 6, 7, 7)": 14,
+    "(6, 7)": 140,
+    "(6, 7, 7)": 15,
+    "(6, 7, 7, 7)": 4,
+    "(7,)": 148,
+    "(7, 7)": 31,
+    "(7, 7, 7)": 3,
+    "(7, 7, 7, 7)": 3
+  },
+  "remaining": {
+    "8372190": {
+      "labelled": 3,
+      "tip_degrees_away_from_hubs": [
+        6,
+        6,
+        6,
+        6
+      ]
+    },
+    "8372223": {
+      "labelled": 1,
+      "tip_degrees_away_from_hubs": [
+        7,
+        7,
+        7,
+        7
+      ]
+    },
+    "8388607": {
+      "labelled": 2,
+      "tip_degrees_away_from_hubs": [
+        7,
+        7,
+        7,
+        7
+      ]
+    }
+  },
+  "complete_for_at_most_two_defects": true,
+  "complete_for_at_most_three_defects": true
+}

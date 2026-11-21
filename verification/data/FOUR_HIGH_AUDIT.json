@@ -1,0 +1,187 @@
+{
+  "atlas": {
+    "catalogue_sha256": "5a878f1a46606da4733df250bf9a412d6ae0b3c73c2112e25d66ba00ae565b56",
+    "isomorphism_types": 1044,
+    "labelled_orbit_sum": 2097152,
+    "non_WKE_by_large_degrees": {
+      "3": 3,
+      "4": 12,
+      "5": 34,
+      "6": 42,
+      "7": 26
+    },
+    "certified_by_large_degrees": {
+      "3": 3,
+      "4": 12,
+      "5": 19,
+      "6": 5,
+      "7": 1
+    },
+    "necessary_rows": [
+      "FEhzo",
+      "FEl}w",
+      "FEl~o",
+      "FEl~w",
+      "FEnbo",
+      "FEnbw",
+      "FEndg",
+      "FEnf_",
+      "FEnfg",
+      "FEnfo",
+      "FEnvg",
+      "FErtw",
+      "FErvW",
+      "FEzfo",
+      "FQyv_"
+    ],
+    "root_faces_verified_in_40_certificates": 543
+  },
+  "four_tip_exceptions": {
+    "exception_masks": [
+      8372190,
+      8372223,
+      8388607
+    ],
+    "C4_actual_cross_patterns_with_checked_pair_witness": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15
+    ]
+  },
+  "group": {
+    "full_group_edges": 37,
+    "packed": [
+      [
+        4,
+        7,
+        0
+      ],
+      [
+        4,
+        8,
+        1
+      ],
+      [
+        4,
+        9,
+        2
+      ],
+      [
+        5,
+        7,
+        1
+      ],
+      [
+        5,
+        8,
+        2
+      ],
+      [
+        5,
+        9,
+        0
+      ],
+      [
+        6,
+        7,
+        2
+      ],
+      [
+        6,
+        8,
+        0
+      ],
+      [
+        6,
+        9,
+        1
+      ]
+    ],
+    "purchases": [
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        3
+      ],
+      [
+        0,
+        7
+      ],
+      [
+        0,
+        8
+      ],
+      [
+        0,
+        9
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        1,
+        7
+      ],
+      [
+        1,
+        8
+      ],
+      [
+        1,
+        9
+      ],
+      [
+        2,
+        7
+      ],
+      [
+        2,
+        8
+      ],
+      [
+        2,
+        9
+      ],
+      [
+        3,
+        7
+      ],
+      [
+        3,
+        8
+      ],
+      [
+        3,
+        9
+      ]
+    ],
+    "obligations": 48,
+    "one_outside_vertex_patterns_checked": 128,
+    "minimum_edges_after_q_deleted_rim_vertices": {
+      "0": 16,
+      "1": 11,
+      "2": 6,
+      "3": 3
+    }
+  }
+}

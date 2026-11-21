@@ -1,0 +1,903 @@
+\documentclass[11pt,a4paper]{amsart}
+\usepackage[T1]{fontenc}
+\usepackage{iftex}
+\ifPDFTeX\usepackage[utf8]{inputenc}\fi
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,mathtools,microtype}
+\usepackage[hidelinks]{hyperref}
+\emergencystretch=2em
+\hypersetup{pdftitle={Tuza's inequality at maximum average degree 15/2},
+ pdfauthor={},pdfsubject={Edge-disjoint triangles and triangle edge covers},
+ pdfkeywords={Tuza conjecture, maximum average degree, triangle packing}}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem*{question}{Open assertion}
+\DeclareMathOperator{\mad}{mad}
+\newcommand{\Hi}{\mathcal H}
+\newcommand{\LL}{\mathcal L}
+\newcommand{\ind}{\mathbf 1}
+\newcommand{\wt}{\widehat w}
+\makeatletter
+\renewcommand{\@settitle}{\begin{center}\baselineskip14\p@\relax
+  \bfseries\@title\end{center}}
+\makeatother
+\title[Tuza's inequality at maximum average degree 15/2]{Tuza's inequality at maximum average degree 15/2}
+\date{}
+\begin{document}
+\raggedbottom
+\begin{abstract}
+Let $\nu$ and $\tau$ be the edge packing and edge covering numbers of
+the triangles of a finite simple graph. We prove $\tau\le 2\nu$ when
+the maximum average degree is at most $15/2$, using Kandasamy's
+maximum-degree-ten theorem at equality. We also prove that the
+vertices of degree at least eight in any counterexample contain two
+distinct, possibly overlapping, copies of $K_1\vee P_4$. A shorter
+argument handles the case in which those vertices induce a triangle-free
+graph. We state the finite local certificate domains and give an open
+simultaneous-packing condition sufficient for the unrestricted conjecture.
+\end{abstract}
+\maketitle
+\markboth{TUZA'S INEQUALITY AT MAXIMUM AVERAGE DEGREE 15/2}
+         {TUZA'S INEQUALITY AT MAXIMUM AVERAGE DEGREE 15/2}
+
+\section{Statements and conventions}
+All graphs are finite and simple. A \emph{packing} is a set of
+pairwise edge-disjoint triangles. A \emph{cover} is an edge set meeting
+every triangle. Write $\nu(G)$ for the largest size of a packing and
+$\tau(G)$ for the smallest size of a cover. Tuza's conjecture asserts
+$\tau(G)\le 2\nu(G)$ for every $G$ and remains open in general.
+Put
+\[
+ \mad(G)=\max_{\varnothing\ne V(J),\,J\subseteq G}
+             \frac{2|E(J)|}{|V(J)|},
+ \qquad H(G)=G[\{v:d_G(v)\ge 8\}],
+\]
+with $\mad(\varnothing)=0$. Degrees defining $H(G)$ are taken in $G$.
+
+\begin{theorem}[Maximum average degree]\label{thm:density}
+If $\mad(G)\le15/2$, then $\tau(G)\le2\nu(G)$, assuming
+Kandasamy's Theorem~1.1 \cite{kandasamy}. For $\mad(G)<15/2$ the
+same conclusion follows without that maximum-degree-ten theorem.
+Both statements use the local inputs in Section~\ref{sec:local}.
+\end{theorem}
+
+\begin{theorem}[Triangle-free high subgraph]\label{thm:free}
+If $H(G)$ is triangle-free, then $\tau(G)\le2\nu(G)$.
+\end{theorem}
+
+\begin{theorem}[Two high fans]\label{thm:fans}
+If $\tau(G)>2\nu(G)$, then $H(G)$ contains two copies of
+$K_1\vee P_4$ with distinct seven-edge sets. The copies may share
+vertices and edges and may have the same five-vertex set.
+\end{theorem}
+
+A fan is an ordinary subgraph. Four distinct rim vertices $x,b,c,z$
+form a path in that order and a fifth vertex $a$ sees all four.
+Reversing the path gives the same seven edges. Other edges on these
+vertices and triangles using exterior vertices are allowed. All three
+theorems concern the packing and covering of \emph{every} triangle of
+$G$. Theorem~\ref{thm:fans} implies Theorem~\ref{thm:free}, but
+Section~\ref{sec:free} gives a proof using fewer finite inputs.
+
+\begin{figure}[ht]
+\centering
+\setlength{\unitlength}{1pt}
+\begin{picture}(168,62)
+\qbezier(12,10)(36,10)(60,10)
+\qbezier(60,10)(84,10)(108,10)
+\qbezier(108,10)(132,10)(156,10)
+\qbezier(84,49)(48,29.5)(12,10)
+\qbezier(84,49)(72,29.5)(60,10)
+\qbezier(84,49)(96,29.5)(108,10)
+\qbezier(84,49)(120,29.5)(156,10)
+\put(12,10){\circle*{3}}\put(60,10){\circle*{3}}
+\put(108,10){\circle*{3}}\put(156,10){\circle*{3}}\put(84,49){\circle*{3}}
+\put(12,2){\makebox(0,0){$x$}}\put(60,2){\makebox(0,0){$b$}}
+\put(108,2){\makebox(0,0){$c$}}\put(156,2){\makebox(0,0){$z$}}
+\put(84,57){\makebox(0,0){$a$}}
+\end{picture}
+\caption{The three specified faces are $abx,abc,acz$. The two
+repeated edges $ab,ac$ have different roles in the packing in
+Section~\ref{sec:fans}, where the two possible head matchings share $bc$.}
+\label{fig:fan}
+\end{figure}
+
+Puleo proved the unrestricted density bound $\mad(G)<7$
+\cite{puleo}. Gupta \cite{gupta} and Kandasamy \cite{kandasamy}
+give maximum-degree bounds. Tsujimura's larger density bounds
+require restrictions on triangle overlap, including at most four
+triangles on an edge \cite{tsujimura}. Our density hypothesis allows
+arbitrary maximum degree and edge triangle multiplicity. In an
+all-high minimal violation, Puleo's odd-wheel link lemmas already
+give at least five fans at every vertex \cite[\S4]{puleo}. The mixed
+high- and low-degree case is the issue in Theorem~\ref{thm:fans}.
+The triangle graph of a graph has its triangles as vertices, with
+adjacency by a common edge. The perfect-triangle-graph criterion
+in \cite[Theorem 18]{trianglegraphs} concerns the triangle graph of
+the whole graph. We use the triangle graph of $H(G)$ and control
+separately the triangles that meet lower-degree vertices.
+We make no claim of historical priority.
+
+\section{Minimal violations and local certificates}\label{sec:local}
+Choose a violation $M$ minimal under subgraph inclusion. Each proper
+subgraph of $M$ satisfies Tuza. We may do this inside any of our
+three classes: average-density bounds pass to subgraphs, and a
+vertex high in a subgraph is high in the original graph. An edge
+of $H(M)$ therefore remains an edge of the original high subgraph.
+Write $\Hi=V(H(M))$, call its members \emph{high}, and call a vertex
+of degree five or six \emph{low}. A \emph{seven} is a vertex of degree
+seven. Put $r(v)=|N(v)\cap\Hi|$. For a high $h$ write $j=r(h)$.
+A vertex $h$ \emph{subsumes} its neighbor $v$ if $N[v]\subseteq N[h]$.
+The \emph{link} of $v$ is $M[N(v)]$. The \emph{codegree} of an edge
+is its number of common neighbors. Call edges of codegree at least
+four \emph{wide}. Puleo's reductions imply robustness: every link
+component has at least five vertices. Thus a link of order less
+than ten is connected. An admissible seven-link must also fail
+the following test. If a matching $P$ admits a set of at most
+$|P|$ vertices meeting every link edge outside $P$, pack the
+root triangles on $P$ and buy the
+matched edges and spokes to the chosen vertices. This reduces
+the root by Lemma~\ref{lem:pay}. These are the endpoint link
+conditions in the pair enumeration.
+
+\begin{lemma}[Local payment]\label{lem:pay}
+Let $W\ne\varnothing$ be a set of roots, let $P$ be a packing, and
+let $X\subseteq E(M)$. Suppose $|X|\le2|P|$, every triangle at a
+root meets $X$, and every edge of $P$ with both ends outside $W$
+belongs to $X$. Then $M$ is not a minimal violation.
+\end{lemma}
+\begin{proof}
+Apply minimality to $M-W-X$. Its packing together with $P$ is
+edge-disjoint. Its cover together with $X$ covers $M$. These two
+extensions give $\tau(M)\le2\nu(M)$. More generally one may delete a
+further edge $e\notin X$ if every triangle on $e$ meets $X$ and every
+off-root edge of $P$ lies in $X\cup\{e\}$.
+\end{proof}
+
+A rooted neighborhood in the checks below includes all neighbors of
+each root, all edges of its link, and all specified intersections.
+Thus an exterior vertex cannot add a triangle incident to a root
+with a new neighbor. Unknown edges between private neighbors of
+different roots are included in the pair checks.
+
+\begin{lemma}[Low vertices and seven-links]\label{lem:structure}
+In $M$ the minimum degree is at least five, and the lows form an
+independent set. Each five has a link missing at most one edge and
+has at least three pairwise adjacent high subsumers. A six either has
+an octahedral link with six high neighbors (a \emph{thin} six), or its
+link lacks at most one edge and it has at least four high subsumers.
+A vertex subsuming a low has degree at least nine. For distinct lows
+$x,z$, $|N(x)\cup N(z)|\ge7$; equality forces both to be fives
+with clique links.
+
+Every seven has $r\ge4$ and at least five wide spokes. If $r=4$,
+its four high neighbors induce a square or a clique. Adjacent
+sevens cannot have codegree five or six. At codegree four, their
+common four neighbors are high and induce a square or a clique.
+Each of the two private neighbors on either side sees all four
+common neighbors.
+\end{lemma}
+
+The low-vertex inputs use Puleo's robustness and subsumption
+reductions \cite[\S2]{puleo} and the low-neighborhood union lemma
+\cite[Lemma 3.3]{bfg}. For a thin six adjacent to an eight or nine
+one uses Kandasamy's local Lemma~3.5 with its connected-neighborhood
+hypothesis \cite{kandasamy}. The small-degree proofs also use
+Gupta's rooted reductions \cite{gupta}. A codegree-four result with
+additional codegree bounds at the tips alone would not justify the
+last sentence of the lemma. For four common tips and two private
+vertices at each endpoint, a tip is over budget if it sees more
+than five of the other seven labels outside the endpoints.
+Counting classes by $0,1,2,3,4$ over-budget tips gives
+$1{,}144,1{,}134,715,210,83$ respectively. Only three in the
+last group survive the uniform payment test. The following are
+the extra finite
+inputs used here and in the fan proof.
+
+\begin{center}\small
+\begin{tabular}{@{}p{.24\linewidth}p{.69\linewidth}@{}}
+\hline
+Domain & Enumeration and outcome\\ \hline
+Single seven &
+The $2^{21}$ labeled seven-vertex links give 1,044 isomorphism
+classes. Positive rooted certificates among the reduced cases
+include 40 cone certificates. The surviving candidates give the
+five-wide-spoke bound.\\[3pt]
+Two sevens, four tips &
+451,235 labeled endpoint pairs give 3,286 marked classes.
+Of these, 3,245 admit transferred certificates and 38 further
+classes have direct certificates. The 3,283 positive classes each
+pass all 16 private-edge completions, for 52,528 checks. One of the
+three survivors has a square on the quartet and two have a clique.\\[3pt]
+Mixed nine, three high peers &
+64 masks in the remaining marked case admit local payments.
+The certificates contain 507 packed triangles and account for
+3,010 rooted triangles in the local supports.\\[3pt]
+High markings and fan counts &
+77 surviving unmarked seven-links have 9,856 high/low markings;
+159 put every wide spoke at a high neighbor. Five of those have
+zero ordinary high fans and none has exactly one, two, or three.
+At a tetrahedron-neighboring seven, 194 of 200 remaining labeled
+assignments reduce directly.\\[3pt]
+Two sevens, three tips &
+The path-type pair at the end of the marked-link reduction admits
+one fixed payment on all $2^9=512$ private-edge completions.\\ \hline
+\end{tabular}
+\end{center}
+In a positive class a checker tests triangle membership,
+edge-disjointness, the covering condition for all rooted
+triangles, and payment for the packed edges left in the residual
+graph. In classifications using designated exits, it also checks
+their payment bounds under the recorded degree hypotheses. A
+surviving signature specifies necessary incidences; it need not
+be realizable in a violation. The companion verification guide
+identifies the implemented replays and inherited inputs. The
+bounded census in Section~\ref{sec:census} is independent of all
+three proofs.
+
+\section{Counting high neighbors}\label{sec:count}
+Let $n=|V(M)|$, $m=|E(M)|$. Begin with surplus $d(v)-7$ at each
+vertex. Each five takes $2/3$ from every high subsumer. Each
+nonthin six takes $1/4$ from every high subsumer; each thin six
+takes $1/6$ from every neighbor. In Puleo's discharging the resulting
+surpluses are nonnegative \cite[\S2, Lemmas 2.7--2.8]{puleo}.
+If a five has a clique
+link, each of its five neighbors subsumes it, hence is high. The five
+has surplus $5(2/3)-2=4/3$. Return $4/15$ to each of these neighbors.
+Let $s'(v)$ be the resulting surplus. Independently, assign a high
+vertex its own unit of weight and divide each other vertex's unit
+equally among its high neighbors. Write $w_0$ for these totals.
+Then
+\begin{equation}\label{eq:sum}
+  s'(v)\ge0,\qquad \sum_v s'(v)=2m-7n,\qquad
+  \sum_{h\in\Hi}w_0(h)=n .
+\end{equation}
+If $h$ has degree $d$, let $\ell$ be its number of low neighbors
+and $f$ its number of subsumed fives. All nonhigh neighbors have
+$r\ge4$ except fives with $r=3$, whose three high neighbors subsume
+them. Consequently
+\begin{equation}\label{eq:wzero}
+ w_0(h)\le1+(d-j)/4+f/12,\qquad w_0(h)\le1+(d-j)/3 .
+\end{equation}
+If $h$ subsumes a low, then $\ell\le d-6$. At equality at most two
+lows are subsumed: their open neighborhoods lie in a set of seven,
+where the three-low local reduction applies: if three are subsumed,
+their links are cliques, their complementary pairs in the seven-set
+are pairwise disjoint, and the seven-set induces $K_7$. Buying its
+21 edges pays for the eleven triangles of \cite[Fig.~4]{bfg} at
+these three roots. If $j\le2$, a thin
+neighbor or a subsumed six would require more high peers. Two paid
+fives would share all three subsumers, forcing a union of size at
+most seven and clique links, which give four high peers. Thus the
+loss at $j\le2$ is at most $2/3$.
+
+\begin{lemma}\label{lem:seven-five}
+A seven adjacent to a five has at least five high neighbors.
+If a high has exactly two high peers and they are adjacent, each of
+its seven-neighbors also has at least five high neighbors.
+\end{lemma}
+\begin{proof}
+Suppose $p$ is a seven adjacent to a five $x$ with $r(p)=4$.
+The edge $px$ has three common neighbors: four would make $p$
+subsume $x$. Some wide spoke at $p$ ends at a nonhigh $t$.
+It cannot end at a five for the same reason. If $t$ is a seven,
+Lemma~\ref{lem:structure} makes $x$ private to $p$ and adjacent
+to the four common high tips, again impossible. Thus $t$ is a
+nonthin six whose four high subsumers comprise all four high
+neighbors of $p$. At least three subsumers of $x$ neighbor $p$,
+and hence neighbor $t$. Those three and $p$ lie in
+$N(x)\cap N(t)$, giving $|N(x)\cup N(t)|\le7$ for lows of
+unequal degree. For the second assertion, a seven's high quartet,
+if it exists, contains the high in question. A clique gives it
+three high peers; in a square its two high peers would be
+nonadjacent.
+\end{proof}
+
+Consider a \emph{mixed nine}, a nine $h$ subsuming both a five $x$
+and a nonthin six $z$. Low independence and the union lemma give
+\begin{equation}\label{eq:union}
+ N(x)\cup N(z)=\{h\}\cup(N(h)\setminus\{x,z\}),\quad
+ |N(x)\cup N(z)|=8,\quad |N(x)\cap N(z)|=3 .
+\end{equation}
+In particular $x,z$ are the only low neighbors of $h$ and their
+payments give $s'(h)\ge 2-2/3-1/4=13/12$. The four high subsumers
+of $z$ give $j\ge3$. If $j=3$ the six uses all four available
+highs. The $r(x)\ge4$ case is excluded by the three-element
+intersection, and the remaining case is exactly the 64-mask
+reduction of Section~\ref{sec:local}. In its labeling, $h,a,b$
+are three universal vertices of the ten-vertex display. Its other
+vertices are $c,x,z,p,q,r,t$; the required edges among them are
+$xp,xq,zc,zr,zt,cr,ct$, and exactly $cp,cq,pr,pt,qr,qt$ are
+undecided. The links at $h,x,z$ are exhausted. When a private
+seven is deleted, buy its $7-d_{\rm display}(v)$ actual exits.
+Thus the 925 internal and 56 exit purchases in the 64 records
+cover all triangles at the deleted roots even when two private
+vertices share an exterior neighbor. It follows that $j\ge4$.
+Let $\LL$ be the mixed nines with $j=4$ and put $S_t=N(t)\cap\Hi$.
+At $h\in\LL$, $|S_x\cup S_z|=5$. The three possibilities are
+\[
+\begin{array}{c|ccc}
+ (|S_x|,|S_z|)&(3,4)&(3,5)&(4,4)\\ \hline
+ |S_x\cap S_z|&2&3&3\\
+ \text{upper bound on }w_0(h)&67/30&131/60&11/5 .
+\end{array}
+\]
+For the first two columns the two sevens adjacent to $x$ have
+$r\ge5$ and the third seven has $r\ge4$. For the last column,
+$x$ and $z$ contribute at most $1/4$ each and the seven at $x$
+contributes at most $1/5$. These estimates give the displayed bounds.
+
+\subsection{Two redistributions}
+First modify the fractions sent by a five $x$ with $|S_x|=3$.
+Mark those of its three subsumers that are in the $(3,4)$ column.
+At any mark the subsumed six sees two labels of $S_x$, and both
+subsume that six. If all three were marked, the distinct sixes
+would partition three labels into pairs: a marked nine cannot
+neighbor a second six by \eqref{eq:union}. At one mark subtract
+$1/30$ and add $1/60$ to each unmarked share. At two marks subtract
+$1/30$ at each and add $1/15$ to the third. These changes preserve
+each unit. Write $\wt$ for the resulting weights.
+
+A $(4,4)$ vertex receives nothing. A $(3,5)$ vertex $g$ receives
+at most $1/60$. Indeed, if the other two subsumers are marked with
+different sixes, their pairs in $S_x$ must both contain $g$.
+This gives $g$ two sixes. If they have the same six, the six of $g$
+has five high neighbors including all three members of $S_x$.
+At least four of the five subsume it, so one of the two marked
+vertices would subsume both sixes. Both cases contradict
+\eqref{eq:union}. Thus, for $h\in\LL$,
+\begin{equation}\label{eq:limit}
+\wt(h)\le
+ \frac{67}{30}-\frac1{30}
+ =\frac{131}{60}+\frac1{60}=\frac{11}{5}.
+\end{equation}
+Any high can receive at most $1/15$ per adjacent five with $r=3$.
+
+\begin{lemma}[A recipient outside the exceptional set]\label{lem:recipient}
+Every $h\in\LL$ has a high neighbor outside $\LL$ that subsumes a low.
+\end{lemma}
+\begin{proof}
+In column $(3,4)$ look at the three labels in $S_x$. If all were
+in $\LL$, their unique adjacent sixes would partition the set into
+parts of size at least two. The part through $h$ has size two,
+leaving one. All three labels subsume $x$. In column $(4,4)$
+partition $S_z$ by the unique fives incident to its marked labels.
+The part through $h$ has size three; all parts have size at least
+two. This leaves one of the four labels, all of which subsume $z$.
+
+In column $(3,5)$ inspect the five labels of $S_z$. Each member
+in $\LL$ has a five whose three high neighbors are in $S_z$ and
+subsume it. Five labels cannot partition into triples. If two or
+more labels are outside $\LL$, one subsumes $z$ because at least
+four of the five do. If a unique outsider belongs to none of the
+triples, the remaining four would partition into triples. Thus in
+this last case it subsumes a five. In every column the chosen
+outsider neighbors $h$, since $h$ subsumes the focal low.
+\end{proof}
+
+Send $1/30$ from each $h\in\LL$ to one recipient furnished by the
+lemma. Write $w$ for the new weight. At a sender,
+$w\le11/5-1/30=13/6\le2s'$. A recipient subsumes a low and can
+receive at most $j/30$. If $f_3$ counts its adjacent fives with
+$r=3$, the first redistribution gives the bound
+\begin{equation}\label{eq:sharp}
+ \wt\le1+(d-j)/4+3f_3/20-\ind_{\{f_3>0\}}/10 .
+\end{equation}
+Indeed each such five adds at most $1/3-1/4+1/15=3/20$ above
+the baseline. Its two seven-neighbors both see the subsumer, and
+each saves at least $1/4-1/5$ by Lemma~\ref{lem:seven-five}.
+We count this saving only once. The right side of
+\eqref{eq:sharp} plus $j/30$ decreases with $j$ for fixed $d,f_3$.
+
+\subsection{Donor bounds and the endpoint}
+For transparency the following table gives the intermediate
+ratios \emph{before} the second transfer. The two paired entries
+are in order of increasing $j$.
+\begin{center}\small
+\begin{tabular}{@{}ll@{}}\hline
+Degree and condition & Upper bound on $\wt/s'$\\ \hline
+Eight & $2$\\
+Nine, no subsumed five or two clique-link fives & $5/3$\\
+Nine, only one paid five, $j=2$ or $j\ge3$ & $39/20,\ 159/80$\\
+Nine, mixed, $j\ge5$ or $j=4$ & $129/65,\ 132/65$\\
+Ten, two subsumed fives, $\ell\le3$, $j=3$ or $j\ge4$ & $183/100,\ 168/85$\\
+Ten, every other case & $191/105$\\
+Every degree at least eleven & $69/35$\\ \hline
+\end{tabular}
+\end{center}
+Here are the details that give the table and allow the additional
+$j/30$. An eight has no thin neighbor and subsumes no low.
+The degree-eight link reduction gives $j\ge4$ without a global
+minimum-degree hypothesis. To see the finite test, mark five
+nonhigh slots of its full link $J$, choose a subset $S$ of them,
+and put $R=V(J)\setminus S$. Buy the edges within each side of
+the partition $\{h\}\cup S,R$ of the cone, and all exits at $S$.
+The cost is at most $7|S|+2|E(J[R])|-|E(J)|$.
+After earlier cone reductions, the 203 retained links give 11,368
+placements. Of these 3,308 already force a mark to have degree
+eight; 8,060 pass the displayed bound against twice a cone packing.
+Thus $w_0\le1+4/4=2$ at an eight. It sends and receives no new
+weight, and $s'=1$. At degree nine,
+there are no thin neighbors and at most two paid lows. With no
+subsumed five, the respective $(w_0,s')$ bounds for zero, one,
+or two payments are $(13/4,2)$, $(5/2,7/4)$ and $(5/2,3/2)$.
+For two subsumed fives their neighborhoods are in one eight-set.
+If the union has size eight their intersection consists of $h$
+and a second vertex $k$. On each side the only possible missing
+edge in the five-link is absent, joins $k$ to a private vertex,
+or joins two private vertices. Taking the two sides in either
+order yields six types. Their payment sizes $(|P|,|X|)$ in
+order $CC,CK,CP,KK,KP,PP$ are
+$(8,16),(7,14),(7,14),(7,14),(6,11),(7,14)$, with $C$ a
+complete link and $K,P$ the two missing-edge types. Transporting
+the six certificates covers $7^2$ labeled link choices and all
+512 private cross-edge assignments per choice. All triangles
+at $h$ and the two fives are in this ten-vertex display.
+Thus the union has size seven and both links are cliques. The six high peers
+and the two rebates give $w_0\le33/20$ and $s'\ge6/5$.
+In these cases $\wt/s'\le5/3$, $s'\ge1$, and even $9/30$ fits.
+
+If there is just one paid five, $s'\ge4/3$. At $j=2$ the high
+peers are its fellow subsumers and adjacent. The other six
+nonhigh neighbors are sevens, each with $r\ge5$ by
+Lemma~\ref{lem:seven-five}. Hence $w_0\le38/15$ and
+$\wt/s'\le39/20$. The margin is at least $1/15=2/30$.
+At $j\ge3$ one has $w_0\le31/12$ by \eqref{eq:wzero}.
+With the second transfer, \eqref{eq:sharp} gives at most $53/20$
+if $f_3=1$ and $13/5$ otherwise, both below $8/3$.
+
+A mixed nine outside $\LL$ has $j\ge5$ and $s'\ge13/12$.
+Initially $w_0\le25/12$, with receipt at most $1/15$ at the
+first transfer. If $r(x)\ge4$, \eqref{eq:sharp} gives
+$w\le1+4/4+5/30=13/6$. If $r(x)=3$, the two sevens $p,q$
+at the five force $j=5$ and the eight-element union in
+\eqref{eq:union} has six highs. When $r(z)\ge5$,
+\[
+ w\le 1+\tfrac13+\tfrac15+\tfrac25+\tfrac1{15}
+               +\tfrac5{30}=\tfrac{13}{6}.
+\]
+When $r(z)=4$, its two sevens are the same $p,q$. Each sees all
+three high subsumers of the five and all four of the six, a union
+of six highs. Hence
+\[
+ w\le 1+\tfrac13+\tfrac14+\tfrac26+\tfrac1{15}
+               +\tfrac5{30}=\tfrac{43}{20}<\tfrac{13}{6}.
+\]
+
+For reference the elementary degree-ten budget is as follows.
+Entries are upper bounds for the original weight and lower bounds
+for the rebated surplus, respectively.
+\begin{center}\small
+\begin{tabular}{@{}lll@{}}\hline
+Condition & $w_0$ at most & $s'$ at least\\ \hline
+No subsumed low, no thin neighbor & $13/3$ & $3$\\
+No subsumed low, some thin neighbor & $3$ & $2$\\
+Some subsumed low, $j\le2$ & $11/3$ & $7/3$\\
+$j\ge3,\ f\le1,\ \ell\le3$ & $17/6$ & $11/6$\\
+$j\ge3,\ f\le1,\ \ell=4$ & $17/6$ & $7/4$\\
+$j\ge3,\ f=2,\ \ell\le3$ & $35/12$ & $17/12$\\
+$j\ge3,\ f=2,\ \ell=4$ & $35/12$ & $28/15$\\
+Three subsumed fives & $7/3$ & $23/15$\\ \hline
+\end{tabular}
+\end{center}
+Indeed a thin neighbor forces $j\ge4$. For a subsumer
+$\ell\le4$, and at $\ell=4$ at most two lows are paid as
+subsumed lows; the others cost at most $1/6$ each. Two paid fives
+there have clique links and yield two rebates. When three fives
+are paid, their neighborhoods are five-subsets of the same
+eight-set. Two of their complementary triples intersect, forcing
+two clique links and six high peers. These facts and
+\eqref{eq:wzero} give the table.
+
+A ten with $f=2$, $\ell\le3$ and $j=3$ cannot also pay a nonthin
+six. The three neighborhoods would be in one eight-set with four
+highs; the six uses the four highs and two sevens. Each five has
+union eight with the six, so both fives contain the other two
+sevens and three of the four highs. Their intersection would have
+order at least four, contradicting the union lemma. There is no
+thin neighbor. Thus $s'\ge5/3$ and $\wt/s'\le183/100$, allowing
+$3/30$. At $j\ge4$ use $s'\ge17/12$ and \eqref{eq:sharp} at
+$j=4$, $f_3\le2$. It gives
+$w\le1+6/4+3/10-1/10+4/30=17/6$ when $f_3>0$ and less
+when $f_3=0$. In the other rows $w_0/s'\le34/21$, $f\le3$ and
+$s'\ge4/3$. Even adding $1/5$ to the original ratio gives
+$191/105$. For $j\le7$ the remaining margin is at least
+$76/315>7/30$. For $j\ge8$ there are at most two nonhigh
+neighbors, giving $w\le1+2/3+2/15+10/30<8/3$.
+
+Put $k=d-7\ge4$ in larger degrees. When $j\le2$, use
+$\wt\le1+d/3+1/15$ and $s'\ge k-2/3$. Their ratio is at most
+$71/50$; even after $2/30$ there is strict slack. With no
+subsumed low there is no receipt and $s'\ge k-d/6$,
+$\wt=w_0\le(k+8)/4$ for $j\ge3$. The resulting ratio is at
+most $18/13$. Otherwise $j\ge3$, $\ell\le k+1$. The following
+lower bounds on the final margin include all possible receipts:
+\[
+\begin{array}{l|c|c}
+ \text{condition}&s'\text{ at least}&2s'-w\text{ at least}\\ \hline
+ \ell=k+1 &(5k-7)/6 &(85k-284)/60\\
+ \ell\le k,\ f\le k-1,\ f_3>0 &(9k-5f)/12 &(16k-61)/60\\
+ \ell\le k,\ f\le k-1,\ f_3=0 &(9k-5f)/12 &(25k-76)/60\\
+ \ell=f=k & k/3+8/15 &(16k-23)/60
+\end{array}
+\]
+For the first row $f\le2$ and the loss is at most
+$4/3+(k-1)/6$. Use \eqref{eq:sharp} without its saving at
+$j=3$. In the next two rows the loss is at most
+$2f/3+(k-f)/4$. At $j=3$ the saving $1/10$ cancels $3/30$ if
+$f_3>0$. Otherwise use $w\le(k+8)/4+1/10$. The smallest margin
+occurs at $f=k-1$. In the last row two complementary triples of
+the five-neighborhoods in an eight-set meet, so two clique-link
+rebates apply and $j\ge6$. At $j=6$ use
+$w\le29/20+2k/5$. Each displayed margin is positive for $k\ge4$.
+For the intermediate ratio in the $f\le k-1$ rows, replacing
+$w$ by $(k+8)/4+3f/20$ before the second transfer gives
+$(24k+111)/(20k+25)\le69/35$; the other rows give smaller
+ratios.
+
+\begin{proof}[Proof of Theorem~\ref{thm:density}]
+We have $w(h)\le2s'(h)$ for every high $h$, strictly when
+$d(h)\ge11$. Both transfers conserve the sum of the weights. By
+\eqref{eq:sum}, $n\le2(2m-7n)$, so $2m/n\ge15/2$. This excludes
+a violation with $\mad(G)<15/2$. Kandasamy's Theorem~1.1
+\cite{kandasamy} gives $\Delta(M)\ge11$ for every violation,
+so at least one summand is strict. Now $2m/n>15/2$ and
+$\mad(G)\ge2m/n$ proves the inclusive assertion.
+\end{proof}
+
+\section{A triangle-free high layer}\label{sec:free}
+\begin{proof}[Proof of Theorem~\ref{thm:free}]
+In a minimal violation a five or a nonthin six has at least three
+pairwise adjacent high subsumers. The high neighbors of a thin six
+induce an octahedron. Since each alternative gives a high triangle,
+all nonhigh vertices are sevens. If there are none, $M=H(M)$
+has no triangles.
+
+Fix a seven $y$. We show that it has a wide edge to another seven.
+If all its wide neighbors are high, put $r=r(y)$. In the induced
+triangle-free graph $J$ on its $r$ high neighbors, at least five
+vertices have degree at least $r-3$: a wide spoke has at least
+four tips, of which at most $7-r$ are sevens. Thus $5\le r\le7$.
+Adjacent degrees in $J$ sum to at most $r$. At $r=7$ the five
+designated vertices would be independent and have degree at most
+two. At $r=6$ a vertex of degree at least four would have four
+neighbors of degree at most two, leaving too few designated
+vertices. Each of the five therefore has degree three and must
+see the only seven in the rim. That seven shares five tips with
+$y$. At $r=5$, $J$ has minimum degree two. A five-cycle allows
+no chord. With a four-cycle the fifth vertex must see exactly two
+opposite corners. Thus $J=C_5$ or $K_{2,3}$. In the cycle both
+remaining sevens see all five highs. In the bipartite graph both
+see the three degree-two highs and at least one sees a fourth.
+In both cases $y$ has the required wide seven-neighbor.
+
+The four common neighbors on a wide seven--seven edge must
+therefore induce a square $A$, by Lemma~\ref{lem:structure}.
+A private high would complete a high triangle on an edge of $A$.
+Both endpoints thus have exactly $A$ as high neighborhood and
+all their private seven-neighbors see $A$. Applying the same
+conclusion at every seven shows that an entire component $B$ of
+the sevens has this common high neighborhood. Each vertex of
+$B$ has degree three in $B$. A triangle in $B$ would give five
+common neighbors to an edge joining sevens, which is excluded.
+Consequently $B$ is triangle-free, has at least six vertices
+and has $b=|E(B)|\ge9$.
+
+Greedily edge-color $B$ with five colors and assign its four
+largest matchings to different vertices of $A$. For each selected
+edge pack its triangle with the assigned corner. This gives at
+least $4b/5$ edge-disjoint triangles. Buy all edges of $B$ and
+all four edges of $A$. These meet every triangle at $B$; every
+packed edge surviving deletion of $B$ has been bought.
+Since $b+4\le8b/5$, Lemma~\ref{lem:pay} gives a contradiction.
+\end{proof}
+
+\section{Two high fans}\label{sec:fans}
+Suppose $M$ is a minimal violation with at most one high fan.
+The proof also covers a fan-free high layer: in that case omit
+the exceptional bases $U,V$ below. In the triangle graph of
+$H(M)$ an induced three-vertex path has middle face $abc$ and
+outer faces $abx,acz$ on different shared edges. Its ends share
+no edge, so $x\ne z$. The union of the faces is exactly a fan,
+and its seven edges recover the three faces. This gives a
+bijection, even when ambient chords exist.
+
+If an abstract graph has exactly one induced three-vertex path,
+that path is an entire component: any vertex adjacent to it
+gives a second path through its middle or an end. Hence a unique
+fan has no other high triangle sharing any of its seven edges.
+Its five vertices induce exactly the pictured fan, as any chord
+of the rim makes a further high triangle with $a$. The other
+triangle-graph components are cliques. Pairwise edge-intersecting
+triangles either have a common edge or lie on a tetrahedron:
+after two share $ab$, any third without $ab$ sharing an edge of
+both uses their two other vertices and $a$ or $b$. This gives the
+fourth face, and no further triangle meets all four. Thus the
+other components are singletons, books (all pages on a common
+base), or the four faces of a tetrahedron. A high vertex outside
+a high tetrahedron $Q$ cannot see two of its corners: it would
+form a triangle sharing an edge with the faces of $Q$. Distinct
+high tetrahedra share at most one vertex. The unique fan and $Q$
+also share at most one vertex, since every adjacent pair of its
+five vertices is on a fan face.
+
+\subsection{The remaining seven-links}
+The high octahedron, $K_5$ missing at most one edge, and the wheel
+over a high square all contain multiple ordinary fans. The first
+excludes thin sixes. By Lemma~\ref{lem:structure} a nonthin six
+$q$ therefore sees exactly four high vertices, its subsumer
+tetrahedron $Q$. Its other neighbors are sevens, nonadjacent
+because neither subsumes $q$. Both see all of $Q$.
+
+In the square signature of a wide seven pair, a private high
+would form a wheel. A private six cannot have this square among
+its four high neighbors, which induce a clique. A private five
+would see all four corners and the endpoint seven would subsume
+it. Hence the private neighbors are sevens. Each new edge from
+an endpoint to a private seven is itself wide with the same
+square, so propagation and the cubic payment in
+Section~\ref{sec:free} exclude the square case. In a wide
+clique-signature pair, no private high sees all of $Q$.
+Consequently both endpoints have high neighborhood precisely $Q$
+and all their private neighbors see $Q$.
+
+Call a seven \emph{special} if it sees an entire high tetrahedron
+and \emph{normal} otherwise. A six cannot neighbor a normal
+seven, and its wide spokes cannot end at a seven or a five.
+Thus all its wide spokes go to highs. Among the 159 such markings
+in Section~\ref{sec:local}, the five with at most one fan all have
+zero. Label the complete link by three tips $a,b,c$ and four
+ends $u,v,s,t$. It contains the two bases $uv,st$ and all the
+tip--end edges, except that $cu$ can be absent. There are no
+other link edges. In the complete case all positions are high.
+In the deficient case only $c,u$ may be nonhigh, independently.
+At a nonhigh slot the common neighbors with the root are three
+highs inducing one edge or a three-vertex path.
+
+At a special seven $y$ there can be no further high neighbor
+in a wide pair, as seen above. If it has no wide seven partner,
+at most four of its required five wide spokes can end in $Q$.
+An outside high sees at most one corner of $Q$ and at most the two
+other noncorners of the link, so is narrow. A five is also narrow.
+Thus a wide spoke ends at a nonthin six $q$. Its high tetrahedron
+must be $Q$: it shares at least two corners with $Q$, since
+there are only seven slots at $y$. Its other seven-neighbor is
+not adjacent to $y$. A second six at $y$ would likewise have
+neighborhood $Q,y$ and one further seven. The two sixes would
+have neighborhood union of order at most seven, contrary to
+Lemma~\ref{lem:structure}. Write $r,s$ for the last two slots.
+Neither sees $q$. Each has at most three neighbors in the rim
+by narrowness and at least two by minimality. Write $X,Y$ for
+their respective neighborhoods on $Q$ and $\epsilon$ for the
+edge $rs$. The degree and narrow-spoke conditions give
+$2\le |X|+\epsilon,\ |Y|+\epsilon\le3$ with the same two bounds
+on each expression. Of the 200 labeled assignments, 194 reduce
+and the six exceptions have $\epsilon=1$ and $X,Y$ complementary
+pairs of corners.
+
+Each five $x$ must neighbor a seven, since five high neighbors
+would induce $K_5$ missing at most one edge. The three high
+subsumers of $x$ form a clique among its common neighbors with
+that seven. This excludes a normal seven by its marking. At a
+special seven on a wide pair, a five would see all four corners,
+making that seven its subsumer. In the exceptional $r,s$ slots
+it sees only two corners, although all its high subsumers would
+have to be there. Thus there are no fives. The remaining slots
+$r,s$ in the six exceptional rows are sevens. A normal $r$ would
+have three high common neighbors with $y$, whereas $s$ is one
+of the three. A special $r$ would have a tetrahedron with two
+corners of $Q$, forcing it to be $Q$, of which it misses two
+corners. This excludes the exceptional assignments.
+
+Every special seven now lies on a wide clique pair, and its
+three nonhigh neighbors see its own $Q$. A component $B$ of
+sixes and special sevens consequently attaches to just one
+tetrahedron $Q$. Its degrees within $B$ are two and three.
+A triangle would contain two sevens with at least five common
+neighbors. Thus $B$ is triangle-free and $b=|E(B)|\ge4$.
+By Vizing's theorem its edges have a proper four-coloring. Pack
+the $b$ colored edges with their assigned corners and one more
+face of $Q$. Buy $E(B)\cup E(Q)$, of size $b+6\le2(b+1)$.
+Lemma~\ref{lem:pay} removes $B$. Only normal sevens remain.
+
+In the deficient rim an adjacent seven in the endpoint slot $u$
+gives a common-tip path; one in the tip slot $c$ gives one
+common edge and an isolated common neighbor. For the path type
+let the roots be $y,z$, the common-tip path $a-h-b$, their
+private bases $uv,st$, and their private tips $c,d$ respectively.
+Pack $dtz,chy,byz,uvy,asz$ and buy
+\[
+ as,\ ay,\ by,\ ch,\ cy,\ dt,\ hz,\ sz,\ tz,\ uv .
+\]
+The five triangles are edge-disjoint and the ten edges pay for
+all 23 rooted triangles and all four surviving packed edges.
+The nine optional edges between the private triples belong to
+no rooted triangle. This excludes the path type. In the one-edge
+type the common edge identifies a whole base at both roots.
+At every remaining root the four ends of its two disjoint bases
+and two full tips adjacent to all four ends are high. The third
+tip may be nonhigh or may miss one end. The only high rim edge
+outside the two bases and the sides of their high pages is its
+possible single edge to the other end of the deficient base.
+
+\subsection{Cycles, paths and the forest count}
+Form a multigraph $D$ with one vertex for each represented base
+and one edge for every seven, joining its two vertex-disjoint
+bases. It has no loops. No tetrahedron edge is represented,
+since its two full tips would force that seven to see the
+tetrahedron. Only the repeated edges $U=ab,V=ac$ can be bases
+from the fan. There is no edge $UV$ in $D$. Each other base
+belongs to its own book component; every side of that book
+appears on exactly one high triangle. At $U$ use the matching
+$ax,bc$ of two sides, and at $V$ use $az,bc$. These avoid both
+bases but share the physical edge $bc$.
+
+Orient a cycle of $k$ edges in $D$ meeting at most one
+exceptional base. At each root pack the triangle on its tail
+base and two triangles through a matching of full-tip sides of
+its head book. If the head is exceptional use its specified
+matching. The ordinary heads have distinct books, so the
+packed triangles are edge-disjoint, even for a parallel pair.
+Buy the $k$ bases, the $2k$ matching edges and all three tip
+spokes per root. The entire rim consists of bases and tip--end
+edges, so these purchases meet every rooted triangle. They cost
+at most $6k$ for $3k$ triangles and buy every off-root packed
+edge. Thus every cycle of $D$ must contain both exceptional
+bases.
+
+Consider an ordinary book $B$ of degree one or two in $D$.
+Choose one incident seven and any one $e$ of its four sides
+using the two full tips. Direct its incident path $A\to B$ or
+$A\to B\to C$, starting with the chosen root. In the second
+case $A\ne C$, as a parallel pair here would reduce. At $B$
+choose a matching containing $e$; if needed use a matching at
+$C$ with the same exceptional rule. The $k=1$ or $2$ roots
+give $3k$ packed triangles. Buy their $k+1$ bases, $3k$ tip
+spokes and the $2k-1$ matching sides other than $e$, and delete
+$e$ from the residual. The sole high page on $e$ meets the
+purchased base $B$. If no seven outside the path sees $e$, the
+extended version of Lemma~\ref{lem:pay} works with $6k$
+purchases. Consequently each such side requires an outside
+seven. At an outside seven the side cannot be a repeated base
+or a side of the exceptional fan. If it were a genuine side of
+a represented ordinary book, its unique high triangle would
+identify its base as $B$, and that seven would already be on
+the path. Thus it must be the unique extra edge of the outside
+seven's rim. The four different demands at each small ordinary
+book, and those at different books, require distinct sevens.
+
+Delete the represented members of $\{U,V\}$ from $D$. The
+ordinary vertices form a forest. Each tree $T$ attaches to each
+exceptional vertex at most once, since two attachments make a
+cycle meeting at most one exception. Let $r\le2$ be their total
+number, and let $L,D_2,J$ count vertices of $T$ of degree one,
+two and at least three in the full multigraph. Its $k=L+D_2+J$
+vertices have degree sum $2(k-1)+r$. Hence $J\le L+r-2\le L$
+and $L+D_2\ge1$. The number of root edges accounted for by $T$
+satisfies
+\[
+ k-1+r\le2L+D_2+1\le3(L+D_2).
+\]
+Every root is counted exactly once since no root joins $U$ to
+$V$. Yet the demands require at least $4\sum_T(L+D_2)$ roots.
+There can be no seven. In the all-high remainder buy one base
+per book and one edge per isolated face while packing one page
+from each. On a tetrahedron pack one face and buy two opposite
+edges. On a unique fan pack $abx,acz$ and buy $ab,ac$.
+Triangle components share no edge. This contradiction proves
+Theorem~\ref{thm:fans}.
+
+\section{An open simultaneous-packing condition}\label{sec:four}
+Call $L$ \emph{hereditarily admissible and tight} if every
+subgraph of $L$ satisfies Tuza and $\tau(L)=2\nu(L)$.
+A packing \emph{avoids} a set of edges if it uses none of them.
+
+\begin{question}
+Let $L$ be hereditarily admissible and tight. Let $u,a,z,b,y$
+be five distinct vertices on a path in that order, with $u,z,y$
+pairwise nonadjacent; all other chords are allowed. Put
+$F_1=\{ua,az\}$ and $F_2=\{zb,by\}$. Suppose one minimum cover
+avoids $F_1\cup F_2$, a maximum packing avoids $F_1$, and a
+possibly different maximum packing avoids $F_2$. Is there one
+maximum packing avoiding $F_1\cup F_2$?
+\end{question}
+
+\begin{proposition}
+An affirmative answer for every such $L$ implies Tuza's conjecture.
+\end{proposition}
+\begin{proof}
+In a least violation $G$ with $\nu(G)=p$, deleting an edge $uv$
+gives
+\[
+ 2p+1\le\tau(G)\le1+\tau(G-uv)\le1+2\nu(G-uv)\le1+2p .
+\]
+The deletion is tight of rank $p$. Every edge has a triangle;
+for a tip $w$ of $uv$ no maximum packing after deletion can
+avoid $uw,wv$ simultaneously, since $uvw$ could then be added.
+In any hereditarily admissible tight graph $T$ each single edge
+can be avoided by a maximum packing: otherwise buying it back
+would give $\tau(T)\le1+2(\nu(T)-1)$. Both invariants add over
+the shared-edge components of triangles, hence each component
+of a tight graph is tight. A blocked pair of legs must lie in
+one component, since different components allow the two separate
+avoiding packings to be combined.
+
+Choose among such tight component subgraphs of $G$ with a blocked
+induced wedge one of minimum packing number $s$, and call it $O$.
+Rename the wedge $u-z-y$. Delete its two legs to form $L$. Every
+maximum of $O$ used at least one leg, so $\nu(L)\le s-1$;
+buying both legs back gives $2s\le2+\tau(L)\le2+2\nu(L)$.
+Thus $L$ is tight of rank $s-1$. Fix a minimum cover of $L$.
+On either deleted leg there is a returning triangle with both
+old edges unbought; otherwise the other leg alone would extend
+the cover of $L$ to one of $O$ of size $2s-1$. If the two
+books offered no choice of distinct outside tips, all these
+uncovered pages would use the same tip $a$, and buying $za$
+would likewise suffice. Thus there are distinct tips $a,b$,
+giving the stated path with four old edges outside this one
+cover. Each half is individually avoidable by minimality of $s$
+and the component argument. A single maximum avoiding both
+would admit both returning triangles in $O$ and reach $s+1$.
+This proves sufficiency. The simultaneous-avoidance assertion
+itself remains open.
+\end{proof}
+
+\section{A bounded check on tight triangle components}\label{sec:census}
+A triangle component is a nonempty connected component of the
+triangle graph, realized on its active edges and their incident
+vertices. Every edge of such a support lies in a triangle,
+and the triangles are connected by shared edges. Through ten
+vertices the only such supports satisfying $\tau=2\nu$ are
+$K_4$ and $K_5$. This confirms an earlier order-ten certificate
+package dated 31 July 2026. Its accompanying audit checked saved
+packing and cover witnesses without regenerating all order-ten
+presentations. The classification concerns positive triangle
+components of bounded order.
+
+ 
+The later enumeration uses a catalogue of \emph{all} graphs of
+order $n-1$ up to isomorphism, since deleting a vertex from a
+triangle component need not preserve triangle connectivity.
+It adds one vertex to each parent and considers every neighborhood
+of the new vertex. It removes
+edges lying in no triangle and retains a spanning single
+component. At order nine the catalogue starts from the 12,346
+eight-vertex graphs. Equitable refinement followed by permutations
+within color classes yields 274,642 canonical records and retains
+64 symmetric presentations as a fallback. Repeated presentations
+preserve coverage. To certify
+$\tau<2\nu$, the program first compares the complement of a
+maximum cut, an explicit cover, with twice a greedy packing.
+When necessary it computes the exact packing number, followed
+by a cover decision if still unresolved. Separate certificates
+cover the orders through eight. Regenerating the nine-vertex
+catalogue gives 274,706 records. The subsequent unpartitioned
+runs gave the following numbers.
+\begin{center}\small
+\begin{tabular}{@{}rrrrr@{}}\hline
+Order & Surviving augmentations & Exact packings & Exact covers & Tight hits\\ \hline
+9 & $1{,}111{,}668$ & $6{,}692$ & 0 & 0\\
+10 & $63{,}572{,}957$ & $111{,}898$ & 0 & 0\\ \hline
+\end{tabular}
+\end{center}
+Each order-ten parent admits 512 neighborhoods. The second
+column counts surviving augmentation instances, with possible
+isomorphic or identical supports. The counts prove no
+classification at larger orders.
+
+\smallskip
+\noindent\begin{minipage}{\linewidth}
+\emph{Verification.} From the repository root,
+\texttt{python3 -B verification/run.py -{}-max-order 9} selects the
+ordinary replay. Selecting \texttt{-{}-max-order 10} includes the
+full order-ten census. The verification documentation states the
+scope and inputs of each implemented check. Certificate and
+arithmetic replays do not mechanize the graph-theoretic deductions
+in this paper or certify the external maximum-degree theorem.
+\end{minipage}
+
+\renewcommand{\bibliofont}{\footnotesize\raggedright}
+\bibliographystyle{amsplain}
+\bibliography{references}
+\end{document}

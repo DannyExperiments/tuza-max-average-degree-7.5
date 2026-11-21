@@ -1,0 +1,12 @@
+{
+  "7": {
+    "representatives": 1044,
+    "sum_of_labelled_orbits": 2097152,
+    "sha256": "5a878f1a46606da4733df250bf9a412d6ae0b3c73c2112e25d66ba00ae565b56"
+  },
+  "8": {
+    "representatives": 12346,
+    "sum_of_labelled_orbits": 268435456,
+    "sha256": "546a249902101c97d3aa590f93e53366854bd0a6f405aa59bdb32d25c57f845a"
+  }
+}

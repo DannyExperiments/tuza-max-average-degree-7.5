@@ -1,0 +1,890 @@
+[
+  {
+    "key": 8372190,
+    "cross_mask": 0,
+    "nodes": 23629,
+    "eligible_spoke_orbits": 369,
+    "spoke_orbits_examined": 369,
+    "no_pair_reduction": true,
+    "cross_mask_orbit": [
+      0
+    ]
+  },
+  {
+    "key": 8372190,
+    "cross_mask": 1,
+    "nodes": 34102,
+    "spoke_orbits_examined": 587,
+    "eligible_spoke_orbits": 644,
+    "certificate": {
+      "key": 8372190,
+      "roots": [
+        0,
+        1
+      ],
+      "packing": [
+        [
+          0,
+          2,
+          4
+        ],
+        [
+          0,
+          3,
+          7
+        ],
+        [
+          0,
+          5,
+          6
+        ],
+        [
+          1,
+          2,
+          5
+        ],
+        [
+          1,
+          3,
+          9
+        ],
+        [
+          1,
+          4,
+          8
+        ],
+        [
+          2,
+          6,
+          8
+        ],
+        [
+          3,
+          4,
+          6
+        ],
+        [
+          3,
+          5,
+          8
+        ]
+      ],
+      "cover": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          7
+        ],
+        [
+          1,
+          9
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          2,
+          6
+        ],
+        [
+          2,
+          8
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          3,
+          5
+        ],
+        [
+          3,
+          6
+        ],
+        [
+          3,
+          7
+        ],
+        [
+          3,
+          8
+        ],
+        [
+          3,
+          9
+        ],
+        [
+          4,
+          6
+        ],
+        [
+          4,
+          8
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          5,
+          8
+        ],
+        [
+          6,
+          8
+        ]
+      ],
+      "via": [
+        "weighted clique"
+      ]
+    },
+    "cross_mask_orbit": [
+      1,
+      2,
+      4,
+      8
+    ]
+  },
+  {
+    "key": 8372190,
+    "cross_mask": 3,
+    "nodes": 47963,
+    "spoke_orbits_examined": 793,
+    "eligible_spoke_orbits": 912,
+    "certificate": {
+      "key": 8372190,
+      "roots": [
+        0,
+        1
+      ],
+      "packing": [
+        [
+          0,
+          2,
+          4
+        ],
+        [
+          0,
+          3,
+          7
+        ],
+        [
+          0,
+          5,
+          6
+        ],
+        [
+          1,
+          2,
+          5
+        ],
+        [
+          1,
+          3,
+          8
+        ],
+        [
+          1,
+          4,
+          9
+        ],
+        [
+          2,
+          6,
+          9
+        ],
+        [
+          3,
+          4,
+          6
+        ],
+        [
+          3,
+          5,
+          9
+        ]
+      ],
+      "cover": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          7
+        ],
+        [
+          1,
+          8
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          2,
+          6
+        ],
+        [
+          2,
+          9
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          3,
+          5
+        ],
+        [
+          3,
+          6
+        ],
+        [
+          3,
+          7
+        ],
+        [
+          3,
+          8
+        ],
+        [
+          3,
+          9
+        ],
+        [
+          4,
+          6
+        ],
+        [
+          4,
+          9
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          5,
+          9
+        ],
+        [
+          6,
+          9
+        ]
+      ],
+      "via": [
+        "weighted clique"
+      ]
+    },
+    "cross_mask_orbit": [
+      3,
+      5,
+      10,
+      12
+    ]
+  },
+  {
+    "key": 8372190,
+    "cross_mask": 6,
+    "nodes": 19963,
+    "spoke_orbits_examined": 372,
+    "eligible_spoke_orbits": 416,
+    "certificate": {
+      "key": 8372190,
+      "roots": [
+        0,
+        1
+      ],
+      "packing": [
+        [
+          0,
+          2,
+          4
+        ],
+        [
+          0,
+          3,
+          7
+        ],
+        [
+          0,
+          5,
+          6
+        ],
+        [
+          1,
+          2,
+          5
+        ],
+        [
+          1,
+          3,
+          8
+        ],
+        [
+          1,
+          4,
+          9
+        ],
+        [
+          2,
+          6,
+          9
+        ],
+        [
+          3,
+          4,
+          6
+        ],
+        [
+          3,
+          5,
+          9
+        ]
+      ],
+      "cover": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          7
+        ],
+        [
+          1,
+          8
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          2,
+          6
+        ],
+        [
+          2,
+          9
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          3,
+          5
+        ],
+        [
+          3,
+          6
+        ],
+        [
+          3,
+          7
+        ],
+        [
+          3,
+          8
+        ],
+        [
+          3,
+          9
+        ],
+        [
+          4,
+          6
+        ],
+        [
+          4,
+          9
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          5,
+          9
+        ],
+        [
+          6,
+          9
+        ]
+      ],
+      "via": [
+        "weighted clique"
+      ]
+    },
+    "cross_mask_orbit": [
+      6,
+      9
+    ]
+  },
+  {
+    "key": 8372190,
+    "cross_mask": 7,
+    "nodes": 32871,
+    "spoke_orbits_examined": 572,
+    "eligible_spoke_orbits": 644,
+    "certificate": {
+      "key": 8372190,
+      "roots": [
+        0,
+        1
+      ],
+      "packing": [
+        [
+          0,
+          2,
+          4
+        ],
+        [
+          0,
+          3,
+          7
+        ],
+        [
+          0,
+          5,
+          6
+        ],
+        [
+          1,
+          2,
+          5
+        ],
+        [
+          1,
+          3,
+          8
+        ],
+        [
+          1,
+          4,
+          9
+        ],
+        [
+          2,
+          6,
+          9
+        ],
+        [
+          3,
+          4,
+          6
+        ],
+        [
+          3,
+          5,
+          9
+        ]
+      ],
+      "cover": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          7
+        ],
+        [
+          1,
+          8
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          2,
+          6
+        ],
+        [
+          2,
+          9
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          3,
+          5
+        ],
+        [
+          3,
+          6
+        ],
+        [
+          3,
+          7
+        ],
+        [
+          3,
+          8
+        ],
+        [
+          3,
+          9
+        ],
+        [
+          4,
+          6
+        ],
+        [
+          4,
+          9
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          5,
+          9
+        ],
+        [
+          6,
+          9
+        ]
+      ],
+      "via": [
+        "weighted clique"
+      ]
+    },
+    "cross_mask_orbit": [
+      7,
+      11,
+      13,
+      14
+    ]
+  },
+  {
+    "key": 8372190,
+    "cross_mask": 15,
+    "nodes": 17736,
+    "spoke_orbits_examined": 326,
+    "eligible_spoke_orbits": 369,
+    "certificate": {
+      "key": 8372190,
+      "roots": [
+        0,
+        1
+      ],
+      "packing": [
+        [
+          0,
+          2,
+          4
+        ],
+        [
+          0,
+          3,
+          6
+        ],
+        [
+          0,
+          5,
+          7
+        ],
+        [
+          1,
+          2,
+          5
+        ],
+        [
+          1,
+          3,
+          8
+        ],
+        [
+          1,
+          4,
+          9
+        ],
+        [
+          2,
+          7,
+          9
+        ],
+        [
+          3,
+          4,
+          7
+        ],
+        [
+          3,
+          5,
+          9
+        ]
+      ],
+      "cover": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          6
+        ],
+        [
+          1,
+          8
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          2,
+          7
+        ],
+        [
+          2,
+          9
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          3,
+          5
+        ],
+        [
+          3,
+          6
+        ],
+        [
+          3,
+          7
+        ],
+        [
+          3,
+          8
+        ],
+        [
+          3,
+          9
+        ],
+        [
+          4,
+          7
+        ],
+        [
+          4,
+          9
+        ],
+        [
+          5,
+          7
+        ],
+        [
+          5,
+          9
+        ],
+        [
+          7,
+          9
+        ]
+      ],
+      "via": [
+        "weighted clique"
+      ]
+    },
+    "cross_mask_orbit": [
+      15
+    ]
+  },
+  {
+    "key": 8372223,
+    "cross_mask": 0,
+    "nodes": 45323,
+    "eligible_spoke_orbits": 243,
+    "spoke_orbits_examined": 243,
+    "no_pair_reduction": true,
+    "cross_mask_orbit": [
+      0
+    ]
+  },
+  {
+    "key": 8372223,
+    "cross_mask": 1,
+    "nodes": 96339,
+    "eligible_spoke_orbits": 424,
+    "spoke_orbits_examined": 424,
+    "no_pair_reduction": true,
+    "cross_mask_orbit": [
+      1,
+      2,
+      4,
+      8
+    ]
+  },
+  {
+    "key": 8372223,
+    "cross_mask": 3,
+    "nodes": 158453,
+    "eligible_spoke_orbits": 600,
+    "spoke_orbits_examined": 600,
+    "no_pair_reduction": true,
+    "cross_mask_orbit": [
+      3,
+      5,
+      10,
+      12
+    ]
+  },
+  {
+    "key": 8372223,
+    "cross_mask": 6,
+    "nodes": 72374,
+    "eligible_spoke_orbits": 274,
+    "spoke_orbits_examined": 274,
+    "no_pair_reduction": true,
+    "cross_mask_orbit": [
+      6,
+      9
+    ]
+  },
+  {
+    "key": 8372223,
+    "cross_mask": 7,
+    "nodes": 130504,
+    "eligible_spoke_orbits": 424,
+    "spoke_orbits_examined": 424,
+    "no_pair_reduction": true,
+    "cross_mask_orbit": [
+      7,
+      11,
+      13,
+      14
+    ]
+  },
+  {
+    "key": 8372223,
+    "cross_mask": 15,
+    "nodes": 96338,
+    "eligible_spoke_orbits": 243,
+    "spoke_orbits_examined": 243,
+    "no_pair_reduction": true,
+    "cross_mask_orbit": [
+      15
+    ]
+  },
+  {
+    "key": 8388607,
+    "cross_mask": 0,
+    "nodes": 105328,
+    "eligible_spoke_orbits": 450,
+    "spoke_orbits_examined": 450,
+    "no_pair_reduction": true,
+    "cross_mask_orbit": [
+      0
+    ]
+  },
+  {
+    "key": 8388607,
+    "cross_mask": 1,
+    "nodes": 215836,
+    "eligible_spoke_orbits": 800,
+    "spoke_orbits_examined": 800,
+    "no_pair_reduction": true,
+    "cross_mask_orbit": [
+      1,
+      2,
+      4,
+      8
+    ]
+  },
+  {
+    "key": 8388607,
+    "cross_mask": 3,
+    "nodes": 191613,
+    "eligible_spoke_orbits": 600,
+    "spoke_orbits_examined": 600,
+    "no_pair_reduction": true,
+    "cross_mask_orbit": [
+      3,
+      12
+    ]
+  },
+  {
+    "key": 8388607,
+    "cross_mask": 5,
+    "nodes": 191588,
+    "eligible_spoke_orbits": 600,
+    "spoke_orbits_examined": 600,
+    "no_pair_reduction": true,
+    "cross_mask_orbit": [
+      5,
+      10
+    ]
+  },
+  {
+    "key": 8388607,
+    "cross_mask": 6,
+    "nodes": 160276,
+    "eligible_spoke_orbits": 500,
+    "spoke_orbits_examined": 500,
+    "no_pair_reduction": true,
+    "cross_mask_orbit": [
+      6,
+      9
+    ]
+  },
+  {
+    "key": 8388607,
+    "cross_mask": 7,
+    "nodes": 295726,
+    "eligible_spoke_orbits": 800,
+    "spoke_orbits_examined": 800,
+    "no_pair_reduction": true,
+    "cross_mask_orbit": [
+      7,
+      11,
+      13,
+      14
+    ]
+  },
+  {
+    "key": 8388607,
+    "cross_mask": 15,
+    "nodes": 217012,
+    "eligible_spoke_orbits": 450,
+    "spoke_orbits_examined": 450,
+    "no_pair_reduction": true,
+    "cross_mask_orbit": [
+      15
+    ]
+  }
+]

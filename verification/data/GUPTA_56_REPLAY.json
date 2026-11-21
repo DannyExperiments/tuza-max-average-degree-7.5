@@ -1,0 +1,65 @@
+[
+  {
+    "core_vertices": 5,
+    "labelled_cores": 1024,
+    "isomorphism_classes": 34,
+    "classes_with_literal_template_witness": 29,
+    "failed_template_labelled_counts": {
+      "empty": 1,
+      "K1,4": 5,
+      "K3 + K2": 10,
+      "bowtie": 15,
+      "K5": 1
+    },
+    "best_slack_labelled_counts": {
+      "-1": 32,
+      "0": 362,
+      "1": 465,
+      "2": 150,
+      "3": 15
+    },
+    "best_slack_unlabelled_counts": {
+      "-1": 5,
+      "0": 13,
+      "1": 12,
+      "2": 3,
+      "3": 1
+    },
+    "class_records_sha256": "6388f8f0097d68b932fa87e080ad0ff93f71e9f22dcc2879b2c3863352f50c92",
+    "complete_core_fano_local_graphs_checked": 2048,
+    "exceptional_side_links": {
+      "isolated_private": 32,
+      "connected_WKE": 961,
+      "connected_non_WKE": 31
+    }
+  },
+  {
+    "core_vertices": 6,
+    "labelled_cores": 32768,
+    "isomorphism_classes": 156,
+    "classes_with_literal_template_witness": 155,
+    "failed_template_labelled_counts": {
+      "K6": 1
+    },
+    "best_slack_labelled_counts": {
+      "-1": 1,
+      "0": 155,
+      "1": 3683,
+      "2": 11367,
+      "3": 13830,
+      "4": 3267,
+      "5": 465
+    },
+    "best_slack_unlabelled_counts": {
+      "-1": 1,
+      "0": 4,
+      "1": 31,
+      "2": 55,
+      "3": 49,
+      "4": 13,
+      "5": 3
+    },
+    "class_records_sha256": "f6b1b175ce4485e0a89332f197b06a2666d93c6b3c91bcbd8208d4d423167874",
+    "complete_core_fano_local_graphs_checked": 1
+  }
+]

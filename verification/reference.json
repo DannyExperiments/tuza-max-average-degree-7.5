@@ -1,0 +1,1331 @@
+{
+  "input_sha256": {
+    "data/FOUR_HIGH_AUDIT.json": "8c1bd005d742923712f7f65b5cdf7d3955fac0d413cc7a2cbaa535bf938bcb22",
+    "data/GUPTA_56_REPLAY.json": "be189203b5fd52aea82eabddb70bc2bc54e4dbf23d09e8cd93995f548d6af273",
+    "data/PAIR_AUDIT.json": "9bbb2cb238a834dbd881410ee93290d78f3302001936745b70a0347b3cdcf2be",
+    "data/PAIR_DIRECT.json.gz": "92e14cd262ff324d9f2d00137123d69aa00522350db0ded515046530bc0d5704",
+    "data/PAIR_EXACT.json": "e263a3c914f8e95fe11fbf32c3a2180c92e114024ee144af4aae4f1bb4899694",
+    "data/PAIR_FINAL.json": "82a23e68a4e2f42d39d811d3c1ffc18f8155872477b219c0a00fda6eb368263f",
+    "data/PAIR_ONE_DEFECT.json.gz": "cccfff94d3c9825425e7d7d59d35c6b430868e97bfd5d14e45306cb5a5b622ba",
+    "data/PAIR_RECEIPT.json": "2aae433d8f359295fa760c5a6d1fbb109be86cb553df11c4d175442b8ab68a8d",
+    "data/PAIR_TRANSFER.json.gz": "53d637937ed981883a1cf1b29de4a5181dafad8701b57188cee10e6a22ead015",
+    "data/SEVEN_CENSUS.json": "e1502b0409c7971dc96613103883401a5f65a36433c82c10f83e6d74e5ced3ca",
+    "data/catalog-verification.json": "9d4fd30c1e9bd69aaacfb5a53142b31bc961b43ecab06bb03277ae392ba13cef",
+    "data/graph7.g6": "5a878f1a46606da4733df250bf9a412d6ae0b3c73c2112e25d66ba00ae565b56",
+    "data/graph8.g6": "546a249902101c97d3aa590f93e53366854bd0a6f405aa59bdb32d25c57f845a",
+    "data/gupta-c4-v1.json": "c51ad4aded53ca0ef7b20536a4008345d0f6f84e453441433e105d290319375f",
+    "data/path_pair_1.json": "593efac46b31f6171d3b55b5c1920839b35169a456262e678462327117f4a758",
+    "data/path_pair_2.json": "c61f72255461845c2b1bfbe4261cdae21296ec8ccf5cc1ea352eef2ea7d73259",
+    "canon.c": "a67c161f53a1543c91f9837eefdfd822249c48a273ed79ede80dd33b4b4e4166",
+    "fast.c": "bd55d42b0f39c4b4bbdb23538bd8c7c84a882201b48e96c9d4ae2683f1591688",
+    "small_census/covers.svg": "4799210cda498a7e80b471e9f3f57ff860e87ae21ee70ac5af05086990bfe171",
+    "data/STAR_ATLAS.json": "5ee7c80682333b57e486d41f707a88cd575cb2887abf45d187cc6ec77bfecae5",
+    "data/MARKED_CUT.json": "b9891912e258df2c82fb898043b38a62a0c9f05bf6833a36193972a016ed9061",
+    "data/MIXED_LOW.json": "378e8ea1857083b9634d7c91ff5a42f559ecf9cde544c7e9bc802cba648d64b1",
+    "data/MIXED_NINE.json": "b5231422db9239f9f3fb9c80609a02617b2034da9657339bc18ae9b62302d7fe",
+    "data/COUNT_WITNESSES.json": "220f0b3325fe042776e44ca688443ad3a34e35190d2525a5f4c28509f048777f"
+  },
+  "checks": [
+    {
+      "script": "check_gupta.py",
+      "output": "stdout",
+      "format": "json",
+      "sha256": "feb5518b265234f69d7b4b03fab7217a5e88112cdd2256d2a43cd6e50accb7d1",
+      "summary": "1,144 codegree-four certificates and 18,304 cross-edge choices"
+    },
+    {
+      "script": "check_gupta_56.py",
+      "output": "stdout",
+      "format": "json",
+      "sha256": "e74ddc676dd681d4532df6449e6275dfd3c2e1d5937be84375df936c865d2bde",
+      "summary": "34 five-tip and 156 six-tip classes",
+      "write_stdout_to": "data/GUPTA_56_REPLAY.json"
+    },
+    {
+      "script": "audit_pairs.py",
+      "output": "stdout",
+      "format": "json",
+      "sha256": "d099c72d0474fc73dcd14eb6e3d5917fd59f490aa9c17a86ef0a7d46d46d7b7a",
+      "summary": "451,235 labelled pairs in 3,286 orbits",
+      "write_stdout_to": "data/PAIR_AUDIT.json"
+    },
+    {
+      "script": "check_pair_exceptions.py",
+      "output": "data/PAIR_EXACT.json",
+      "format": "json",
+      "sha256": "8d3061b84512c84c587b8d6f928321c15c01c28d5565a1157282b1da33bec925",
+      "summary": "19 exact symmetry representatives for the three exceptions"
+    },
+    {
+      "script": "verify_pairs.py",
+      "output": "stdout",
+      "format": "json",
+      "sha256": "57b2e2f97075d24a783eaa110bbe845792ab6555e619514da107ad0c2cec47ef",
+      "summary": "3,283 uniform witnesses and 52,528 completed graph checks",
+      "write_stdout_to": "data/PAIR_FINAL.json"
+    },
+    {
+      "script": "four_high_audit.py",
+      "output": "data/FOUR_HIGH_AUDIT.json",
+      "format": "json",
+      "sha256": "e82f9b60031ca2701d1473b82b7df342364c87b32f773fda9f11f4950f2859b0",
+      "summary": "1,044 seven-links, 40 cone certificates and 48 group obligations"
+    },
+    {
+      "script": "check_quartet.py",
+      "output": "QUARTET_CHECK.json",
+      "format": "json",
+      "sha256": "89fb2ea1e2bac59ff271c65c1b2daeba51330496fbbfb6af90ba07cf12c80ec4",
+      "summary": "15 necessary small link classes and 543 root triangles",
+      "expected_result": {
+        "four_tip": {
+          "connected_non_WKE_one_sides": 4667,
+          "labeled_full_pairs": 451235,
+          "orbits": 3286,
+          "positive_completions": 52528,
+          "positive_orbits": 3283,
+          "unpaid_exceptions": {
+            "8372190": {
+              "all_private_vertices_see_every_tip": true,
+              "core_degrees": [
+                2,
+                2,
+                2,
+                2
+              ],
+              "full_local_tip_degrees": [
+                8,
+                8,
+                8,
+                8
+              ],
+              "private_pairs_are_edges": [
+                false,
+                false
+              ]
+            },
+            "8372223": {
+              "all_private_vertices_see_every_tip": true,
+              "core_degrees": [
+                3,
+                3,
+                3,
+                3
+              ],
+              "full_local_tip_degrees": [
+                9,
+                9,
+                9,
+                9
+              ],
+              "private_pairs_are_edges": [
+                false,
+                false
+              ]
+            },
+            "8388607": {
+              "all_private_vertices_see_every_tip": true,
+              "core_degrees": [
+                3,
+                3,
+                3,
+                3
+              ],
+              "full_local_tip_degrees": [
+                9,
+                9,
+                9,
+                9
+              ],
+              "private_pairs_are_edges": [
+                true,
+                false
+              ]
+            }
+          }
+        },
+        "larger_tip_core_counts": [
+          [
+            5,
+            1024,
+            34
+          ],
+          [
+            6,
+            32768,
+            156
+          ]
+        ],
+        "seven_link": {
+          "catalogue_sha256": "5a878f1a46606da4733df250bf9a412d6ae0b3c73c2112e25d66ba00ae565b56",
+          "connected_non_WKE_by_large_spokes": {
+            "3": 3,
+            "4": 12,
+            "5": 34,
+            "6": 42,
+            "7": 26
+          },
+          "necessary_small_classes": 15,
+          "positive_stars": 40,
+          "root_triangles_checked": 543,
+          "types": 1044
+        }
+      }
+    },
+    {
+      "script": "check_triangle_free.py",
+      "output": "TREE_REVIEW.json",
+      "format": "json",
+      "sha256": "49a1c25a4bbf6c6fb3737f5644efcb179ff3a6613251d31d5b15b41484e2c8d4",
+      "summary": "388 triangle-free labelled five-vertex neighbourhoods",
+      "expected_result": {
+        "five_neighbor_check": {
+          "triangle_free_labeled_graphs": 388,
+          "degree_sum_upper_bounds": {
+            "10": 26,
+            "12": 120,
+            "14": 155,
+            "16": 77,
+            "18": 10
+          }
+        },
+        "C4_join_K33": {
+          "degree_eight_vertices": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "degree_seven_vertices": [
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "root_triangles": 60,
+          "used_triangles": [
+            [
+              0,
+              4,
+              7
+            ],
+            [
+              1,
+              4,
+              8
+            ],
+            [
+              2,
+              4,
+              9
+            ],
+            [
+              1,
+              5,
+              7
+            ],
+            [
+              2,
+              5,
+              8
+            ],
+            [
+              0,
+              5,
+              9
+            ],
+            [
+              2,
+              6,
+              7
+            ],
+            [
+              0,
+              6,
+              8
+            ],
+            [
+              1,
+              6,
+              9
+            ]
+          ],
+          "bought_edges": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              3
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              4,
+              7
+            ],
+            [
+              4,
+              8
+            ],
+            [
+              4,
+              9
+            ],
+            [
+              5,
+              7
+            ],
+            [
+              5,
+              8
+            ],
+            [
+              5,
+              9
+            ],
+            [
+              6,
+              7
+            ],
+            [
+              6,
+              8
+            ],
+            [
+              6,
+              9
+            ]
+          ],
+          "budget_slack": 5
+        }
+      }
+    },
+    {
+      "script": "check_eight_domain.py",
+      "output": "stdout",
+      "format": "json",
+      "sha256": "9db14a44d1ba1b5245e3469c4d082071a593e35e58fcf115749370581d5e0759",
+      "summary": "12,346 eight-links checked, 203 retained"
+    },
+    {
+      "script": "check_eight_placements.py",
+      "output": "MIXED_LOW_AUDIT.json",
+      "format": "json",
+      "sha256": "34be9060d048e2acaf8a81c9db41db45a246c78076ed15b725bafffa2248d2e5",
+      "summary": "11,368 placements, 363,776 subset prices, 8,060 degree-feasible reductions"
+    },
+    {
+      "script": "check_union_eight.py",
+      "output": "union_eight.json",
+      "format": "json",
+      "sha256": "900667ff6d57945ab5cb97e9ed40ccdacee341001a4b460e48722a2672fadad6",
+      "summary": "two five-neighbours at a nine, six types and 25,088 complete graphs"
+    },
+    {
+      "script": "check_mixed_nine.py",
+      "output": "MIXED_NINE_AUDIT.json",
+      "format": "json",
+      "sha256": "abfabc771230856de29d82e5b9bd7fe860a94a9db8078d3d783edaefd784ba6b",
+      "summary": "64 mixed-nine rows, 507 packed triangles, 3,010 internal root triangles"
+    },
+    {
+      "script": "check_count.py",
+      "output": "stdout",
+      "format": "text",
+      "sha256": "c67be09809ec3da30365aa3b708e8a05f2be185c7322df3d34b2b452e4bb9c22",
+      "summary": "predecessor 989/132 and all row allowances"
+    },
+    {
+      "script": "check_endpoint.py",
+      "output": "stdout",
+      "format": "json",
+      "sha256": "a87632361d5e70106083fc3ac6fc8dbe90622a466c4e720b2c7c4cfa97dbfc94",
+      "summary": "coefficient 2, endpoint 15/2, increment 1/132 and four positive affine gaps",
+      "expected_result": {
+        "accounting": {
+          "coefficient_2": {
+            "L": "2",
+            "d>=11 j<=2": "147/100",
+            "d>=11 no low subsumed": "69/35",
+            "eight": "2",
+            "nine other": "59/30",
+            "nine, mixed j>=5, four or more highs at five": "2",
+            "nine, mixed, three plus >=5": "2",
+            "nine, mixed, three plus four": "129/65",
+            "nine, single five, j=2": "2",
+            "nine, single five, j>=3": "159/80",
+            "ten remaining j<=7": "335/168",
+            "ten remaining j>=8": "8/5",
+            "ten two fives j=3": "189/100",
+            "ten two fives j>=4": "2"
+          },
+          "coefficient_81_over_40": {
+            "eight": "81/40",
+            "eleven plus": "9063/4480",
+            "limiting": "81/40",
+            "nine mixed j>=5": "81/40",
+            "nine others": "1681/960",
+            "nine single five": "81/40",
+            "ten delicate": "11007/5440",
+            "ten others": "3161/1680"
+          },
+          "final_threshold": "15/2",
+          "high_degree_gaps": {
+            "ell<=k, f<=k-1, f3=0": {
+              "at_k4": "2/5",
+              "slope": "5/12"
+            },
+            "ell<=k, f<=k-1, f3>0": {
+              "at_k4": "1/20",
+              "slope": "4/15"
+            },
+            "ell=f=k": {
+              "at_k4": "41/60",
+              "slope": "4/15"
+            },
+            "ell=k+1": {
+              "at_k4": "14/15",
+              "slope": "17/12"
+            }
+          },
+          "prior_threshold": "607/81",
+          "increment_over_989_132": "1/132"
+        },
+        "incidences": {
+          "B_unique_outsider_families": [
+            [
+              [
+                0,
+                1,
+                4
+              ],
+              [
+                2,
+                3,
+                4
+              ]
+            ],
+            [
+              [
+                0,
+                2,
+                4
+              ],
+              [
+                1,
+                3,
+                4
+              ]
+            ],
+            [
+              [
+                0,
+                3,
+                4
+              ],
+              [
+                1,
+                2,
+                4
+              ]
+            ]
+          ],
+          "nonexistent_partitions": {
+            "A from five": {
+              "compatible": 0,
+              "partitions": 5
+            },
+            "B from six": {
+              "compatible": 0,
+              "partitions": 52
+            },
+            "C from five": {
+              "compatible": 0,
+              "partitions": 15
+            },
+            "C from six": {
+              "compatible": 0,
+              "partitions": 15
+            }
+          }
+        }
+      }
+    },
+    {
+      "script": "seven_links.py",
+      "output": "SEVEN_REPLAY.json",
+      "format": "json",
+      "sha256": "c8fd7a021fd0065a7b84282a46d78c4f3843d65cc5a28892af549d8dde170ad5",
+      "summary": "77 residual seven-links and 159 eligible markings"
+    },
+    {
+      "script": "check_special_seven.py",
+      "output": "FAN_LINK.json",
+      "format": "json",
+      "sha256": "e278dcf625a5b223db43b8f06acfed9827194eddb3263162841b38cc694382e8",
+      "summary": "200 labelled special links, 194 certified and six in the remaining class"
+    },
+    {
+      "script": "check_path_pair.py",
+      "output": "path_pair_check.json",
+      "format": "json",
+      "sha256": "0de5fa37f89433716748de55eeaa89cd28708fe9db1c225542a2c8022c2b42ab",
+      "summary": "two path-pair certificates and 4,096 completion/status assignments"
+    },
+    {
+      "script": "check_two_fans.py",
+      "output": "two_fans.json",
+      "format": "json",
+      "sha256": "00ae58bae590c8978b5c5be220105fc1873fd1110475ab0b00403ee33d247c89",
+      "summary": "five zero-fan markings, none with one to three fans, four support shapes",
+      "expected_result": {
+        "controls": {
+          "both_exceptional_bases": {
+            "core_edges": [
+              [
+                "a",
+                "b"
+              ],
+              [
+                "a",
+                "c"
+              ],
+              [
+                "a",
+                "x"
+              ],
+              [
+                "a",
+                "y0"
+              ],
+              [
+                "a",
+                "y1"
+              ],
+              [
+                "a",
+                "z"
+              ],
+              [
+                "b",
+                "c"
+              ],
+              [
+                "b",
+                "k0"
+              ],
+              [
+                "b",
+                "s1"
+              ],
+              [
+                "b",
+                "t1"
+              ],
+              [
+                "b",
+                "x"
+              ],
+              [
+                "b",
+                "y0"
+              ],
+              [
+                "b",
+                "y1"
+              ],
+              [
+                "c",
+                "k1"
+              ],
+              [
+                "c",
+                "s0"
+              ],
+              [
+                "c",
+                "t0"
+              ],
+              [
+                "c",
+                "y0"
+              ],
+              [
+                "c",
+                "y1"
+              ],
+              [
+                "c",
+                "z"
+              ],
+              [
+                "k0",
+                "s0"
+              ],
+              [
+                "k0",
+                "t0"
+              ],
+              [
+                "k0",
+                "y0"
+              ],
+              [
+                "k1",
+                "s1"
+              ],
+              [
+                "k1",
+                "t1"
+              ],
+              [
+                "k1",
+                "y1"
+              ],
+              [
+                "s0",
+                "t0"
+              ],
+              [
+                "s0",
+                "x"
+              ],
+              [
+                "s0",
+                "y0"
+              ],
+              [
+                "s1",
+                "t1"
+              ],
+              [
+                "s1",
+                "y1"
+              ],
+              [
+                "s1",
+                "z"
+              ],
+              [
+                "t0",
+                "x"
+              ],
+              [
+                "t0",
+                "y0"
+              ],
+              [
+                "t1",
+                "y1"
+              ],
+              [
+                "t1",
+                "z"
+              ],
+              [
+                "x",
+                "y0"
+              ],
+              [
+                "y1",
+                "z"
+              ]
+            ],
+            "cover": [
+              [
+                "a",
+                "b"
+              ],
+              [
+                "a",
+                "c"
+              ],
+              [
+                "x",
+                "y0"
+              ],
+              [
+                "y1",
+                "z"
+              ],
+              [
+                "c",
+                "y0"
+              ],
+              [
+                "b",
+                "y1"
+              ],
+              [
+                "k0",
+                "y0"
+              ],
+              [
+                "s1",
+                "t1"
+              ],
+              [
+                "k1",
+                "y1"
+              ],
+              [
+                "s0",
+                "t0"
+              ]
+            ],
+            "edges": 289,
+            "exterior_tip_sets": {
+              "ab": [
+                "y0",
+                "y1"
+              ],
+              "ac": [
+                "y0",
+                "y1"
+              ],
+              "ax": [
+                "y0"
+              ],
+              "az": [
+                "y1"
+              ],
+              "bc": [
+                "y0",
+                "y1"
+              ],
+              "cz": [
+                "y1"
+              ],
+              "xb": [
+                "y0"
+              ]
+            },
+            "high_fans": [
+              [
+                "a",
+                "x",
+                "b",
+                "c",
+                "z"
+              ]
+            ],
+            "nonhigh_contacts": {
+              "y0": [
+                "a",
+                "b",
+                "c",
+                "x"
+              ],
+              "y1": [
+                "a",
+                "b",
+                "c",
+                "z"
+              ]
+            },
+            "nu_tau": [
+              10,
+              10
+            ],
+            "packing": [
+              [
+                "a",
+                "b",
+                "x"
+              ],
+              [
+                "a",
+                "c",
+                "z"
+              ],
+              [
+                "b",
+                "c",
+                "y0"
+              ],
+              [
+                "b",
+                "s1",
+                "y1"
+              ],
+              [
+                "c",
+                "k1",
+                "y1"
+              ],
+              [
+                "c",
+                "s0",
+                "t0"
+              ],
+              [
+                "k0",
+                "s0",
+                "y0"
+              ],
+              [
+                "k1",
+                "s1",
+                "t1"
+              ],
+              [
+                "t0",
+                "x",
+                "y0"
+              ],
+              [
+                "t1",
+                "y1",
+                "z"
+              ]
+            ],
+            "reservoir_left_owners": [
+              "a",
+              "a",
+              "k0",
+              "k0",
+              "k0",
+              "k0",
+              "k1",
+              "k1",
+              "k1",
+              "k1",
+              "s0",
+              "s0",
+              "s0",
+              "s1",
+              "s1",
+              "s1",
+              "t0",
+              "t0",
+              "t0",
+              "t1",
+              "t1",
+              "t1",
+              "x",
+              "x",
+              "x",
+              "z",
+              "z",
+              "z"
+            ],
+            "triangles": 35,
+            "vertices": 49
+          },
+          "middle_only": {
+            "core_edges": [
+              [
+                "a",
+                "b"
+              ],
+              [
+                "a",
+                "c"
+              ],
+              [
+                "a",
+                "l"
+              ],
+              [
+                "a",
+                "m"
+              ],
+              [
+                "a",
+                "o"
+              ],
+              [
+                "a",
+                "x"
+              ],
+              [
+                "a",
+                "z"
+              ],
+              [
+                "b",
+                "c"
+              ],
+              [
+                "b",
+                "j"
+              ],
+              [
+                "b",
+                "m"
+              ],
+              [
+                "b",
+                "x"
+              ],
+              [
+                "c",
+                "m"
+              ],
+              [
+                "c",
+                "p"
+              ],
+              [
+                "c",
+                "z"
+              ],
+              [
+                "j",
+                "x"
+              ],
+              [
+                "l",
+                "x"
+              ],
+              [
+                "o",
+                "z"
+              ],
+              [
+                "p",
+                "z"
+              ]
+            ],
+            "cover": [
+              [
+                "a",
+                "b"
+              ],
+              [
+                "c",
+                "m"
+              ],
+              [
+                "a",
+                "z"
+              ],
+              [
+                "a",
+                "l"
+              ],
+              [
+                "b",
+                "j"
+              ],
+              [
+                "c",
+                "p"
+              ]
+            ],
+            "edges": 369,
+            "exterior_tip_sets": {
+              "ab": [
+                "m"
+              ],
+              "ac": [
+                "m"
+              ],
+              "ax": [
+                "l"
+              ],
+              "az": [
+                "o"
+              ],
+              "bc": [
+                "m"
+              ],
+              "cz": [
+                "p"
+              ],
+              "xb": [
+                "j"
+              ]
+            },
+            "high_fans": [
+              [
+                "a",
+                "x",
+                "b",
+                "c",
+                "z"
+              ]
+            ],
+            "nonhigh_contacts": {
+              "j": [
+                "b",
+                "x"
+              ],
+              "l": [
+                "a",
+                "x"
+              ],
+              "m": [
+                "a",
+                "b",
+                "c"
+              ],
+              "o": [
+                "a",
+                "z"
+              ],
+              "p": [
+                "c",
+                "z"
+              ]
+            },
+            "nu_tau": [
+              5,
+              6
+            ],
+            "packing": [
+              [
+                "a",
+                "b",
+                "c"
+              ],
+              [
+                "a",
+                "l",
+                "x"
+              ],
+              [
+                "a",
+                "o",
+                "z"
+              ],
+              [
+                "b",
+                "j",
+                "x"
+              ],
+              [
+                "c",
+                "p",
+                "z"
+              ]
+            ],
+            "reservoir_left_owners": [
+              "a",
+              "b",
+              "b",
+              "b",
+              "c",
+              "c",
+              "c",
+              "j",
+              "j",
+              "j",
+              "j",
+              "j",
+              "l",
+              "l",
+              "l",
+              "l",
+              "l",
+              "m",
+              "m",
+              "m",
+              "m",
+              "o",
+              "o",
+              "o",
+              "o",
+              "o",
+              "p",
+              "p",
+              "p",
+              "p",
+              "p",
+              "x",
+              "x",
+              "x",
+              "x",
+              "z",
+              "z",
+              "z",
+              "z"
+            ],
+            "triangles": 10,
+            "vertices": 57
+          }
+        },
+        "markings": {
+          "catalogue_sha256": "5a878f1a46606da4733df250bf9a412d6ae0b3c73c2112e25d66ba00ae565b56",
+          "ordinary_fans_per_marking": {
+            "0": 5,
+            "4": 9,
+            "7": 1,
+            "10": 5,
+            "12": 8,
+            "14": 2,
+            "16": 1,
+            "18": 8,
+            "20": 1,
+            "24": 6,
+            "25": 1,
+            "26": 3,
+            "27": 1,
+            "28": 1,
+            "30": 3,
+            "34": 8,
+            "36": 2,
+            "42": 3,
+            "46": 5,
+            "47": 1,
+            "52": 1,
+            "53": 1,
+            "54": 5,
+            "60": 4,
+            "64": 2,
+            "70": 1,
+            "72": 3,
+            "74": 1,
+            "75": 1,
+            "80": 10,
+            "84": 1,
+            "88": 1,
+            "90": 1,
+            "91": 1,
+            "95": 1,
+            "100": 1,
+            "108": 8,
+            "120": 4,
+            "132": 2,
+            "135": 1,
+            "160": 1,
+            "165": 1,
+            "180": 1,
+            "186": 1,
+            "192": 11,
+            "207": 1,
+            "208": 1,
+            "212": 1,
+            "228": 1,
+            "252": 1,
+            "256": 1,
+            "270": 1,
+            "318": 1,
+            "360": 4,
+            "369": 1,
+            "384": 1,
+            "396": 1,
+            "450": 1,
+            "504": 1,
+            "588": 1,
+            "840": 1,
+            "1260": 1
+          },
+          "unmarked_domain": {
+            "connected": 853,
+            "connected_non_wke": 117,
+            "labelled_graphs": 2097152,
+            "positive_root_triangles": 543
+          },
+          "zero_fan_rows": [
+            [
+              "FEzvO",
+              [
+                2,
+                3
+              ]
+            ],
+            [
+              "FEzvO",
+              [
+                3
+              ]
+            ],
+            [
+              "FEzvO",
+              [
+                2
+              ]
+            ],
+            [
+              "FEzvO",
+              []
+            ],
+            [
+              "FFzvO",
+              []
+            ]
+          ]
+        },
+        "two_fan_supports": {
+          "bent": 360,
+          "bent+extreme_edge": 360,
+          "cone": 360,
+          "paw": 360
+        }
+      }
+    },
+    {
+      "script": "small_census/census.py",
+      "output": "small_census/CHECKS.json",
+      "format": "json",
+      "sha256": "6f203192a141cd7de0c5c0c32ab77ce7989e1b57c8eef7c75230bad7c2a66d29",
+      "summary": "12,346 order-eight classes and labelled orbit sum 268,435,456",
+      "omit_from_comparison": [
+        "certificate_gzip_sha256"
+      ],
+      "expected_result": {
+        "catalog": "graph8.g6",
+        "sha256": "546a249902101c97d3aa590f93e53366854bd0a6f405aa59bdb32d25c57f845a",
+        "catalog_order": 8,
+        "nonisomorphic": 12346,
+        "labelled_orbit_sum": 268435456,
+        "through_seven_positive": 44,
+        "by_exact_order": {
+          "1": {
+            "graphs": 1,
+            "tight_including_zero": 1,
+            "triangle_free": 1,
+            "support_type": {},
+            "positive_by_nu": {}
+          },
+          "2": {
+            "graphs": 2,
+            "tight_including_zero": 2,
+            "triangle_free": 2,
+            "support_type": {},
+            "positive_by_nu": {}
+          },
+          "3": {
+            "graphs": 4,
+            "tight_including_zero": 3,
+            "triangle_free": 3,
+            "support_type": {},
+            "positive_by_nu": {}
+          },
+          "4": {
+            "graphs": 11,
+            "tight_including_zero": 8,
+            "triangle_free": 7,
+            "nonvacuous_tight": 1,
+            "active_edge_instances": 6,
+            "eligible_edge_instances": 6,
+            "inactive_edge_instances_in_positive_tight_graphs": 0,
+            "support_type": {
+              "K4": 1
+            },
+            "positive_by_nu": {
+              "1": 1
+            }
+          },
+          "5": {
+            "graphs": 34,
+            "tight_including_zero": 17,
+            "triangle_free": 14,
+            "nonvacuous_tight": 3,
+            "active_edge_instances": 22,
+            "eligible_edge_instances": 22,
+            "inactive_edge_instances_in_positive_tight_graphs": 1,
+            "support_type": {
+              "K4": 2,
+              "K5": 1
+            },
+            "positive_by_nu": {
+              "1": 2,
+              "2": 1
+            }
+          },
+          "6": {
+            "graphs": 156,
+            "tight_including_zero": 47,
+            "triangle_free": 38,
+            "nonvacuous_tight": 9,
+            "active_edge_instances": 62,
+            "eligible_edge_instances": 62,
+            "inactive_edge_instances_in_positive_tight_graphs": 12,
+            "support_type": {
+              "K4": 7,
+              "K5": 2
+            },
+            "positive_by_nu": {
+              "1": 7,
+              "2": 2
+            }
+          },
+          "7": {
+            "graphs": 1044,
+            "tight_including_zero": 138,
+            "triangle_free": 107,
+            "nonvacuous_tight": 31,
+            "active_edge_instances": 220,
+            "eligible_edge_instances": 220,
+            "inactive_edge_instances_in_positive_tight_graphs": 77,
+            "support_type": {
+              "K4": 23,
+              "K5": 7,
+              "K4+K4": 1
+            },
+            "positive_by_nu": {
+              "1": 23,
+              "2": 8
+            }
+          },
+          "8": {
+            "graphs": 12346,
+            "tight_including_zero": 552,
+            "triangle_free": 410,
+            "nonvacuous_tight": 142,
+            "active_edge_instances": 1008,
+            "eligible_edge_instances": 1008,
+            "inactive_edge_instances_in_positive_tight_graphs": 589,
+            "support_type": {
+              "K4": 109,
+              "K5": 23,
+              "K4+K4": 9,
+              "K4+K5": 1
+            },
+            "positive_by_nu": {
+              "1": 109,
+              "2": 32,
+              "3": 1
+            }
+          }
+        },
+        "strict_component_witness_methods_order_eight": {
+          "cut": 14088
+        },
+        "certificate_rows": 12346,
+        "deterministic_certificate_stream_sha256": "a6dea7952250778dfec16d039f709817f79369797d67268efe59b5837b2903e1"
+      }
+    },
+    {
+      "script": "small_census/verify.py",
+      "output": "stdout",
+      "format": "text",
+      "sha256": "de4dae7935e513ace1e289d7b2a4317d10ac08cf17bff1d735c654c0650562b5",
+      "summary": "14,088 strict component witnesses and 142 positive tight graphs at order eight"
+    }
+  ],
+  "order_nine_catalogue": {
+    "rows": 274706,
+    "canonical": 274642,
+    "fallback": 64,
+    "sha256": "114059e7803a0d5ab0b347819475df889a852b85adc90d491b8d18b10d1aa65d"
+  },
+  "augmentation": {
+    "9": {
+      "extensions": 3160576,
+      "candidates": 1111668,
+      "exact_packing": 6692,
+      "exact_cover": 0,
+      "tight": 0
+    },
+    "10": {
+      "extensions": 140649472,
+      "candidates": 63572957,
+      "exact_packing": 111898,
+      "exact_cover": 0,
+      "tight": 0
+    }
+  }
+}

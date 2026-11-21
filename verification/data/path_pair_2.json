@@ -1,0 +1,153 @@
+{
+  "all_faces": [
+    "ahy",
+    "ahz",
+    "ast",
+    "asz",
+    "atz",
+    "auv",
+    "auy",
+    "avy",
+    "ayz",
+    "bhy",
+    "bhz",
+    "bst",
+    "bsz",
+    "btz",
+    "buv",
+    "buy",
+    "bvy",
+    "byz",
+    "chy",
+    "cuv",
+    "cuy",
+    "cvy",
+    "dhz",
+    "dst",
+    "dsz",
+    "dtz",
+    "hyz",
+    "stz",
+    "uvy"
+  ],
+  "roots": [
+    "ahy",
+    "ahz",
+    "asz",
+    "atz",
+    "auy",
+    "avy",
+    "ayz",
+    "bhy",
+    "bhz",
+    "bsz",
+    "btz",
+    "buy",
+    "bvy",
+    "byz",
+    "chy",
+    "cuy",
+    "cvy",
+    "dhz",
+    "dsz",
+    "dtz",
+    "hyz",
+    "stz",
+    "uvy"
+  ],
+  "all_packings": 13403,
+  "templates": {
+    "neither": {
+      "deficit_with_both_bases": 2,
+      "packing": [
+        "ahy",
+        "asz",
+        "byz",
+        "cuy",
+        "dhz"
+      ],
+      "bought": [
+        "ah",
+        "as",
+        "az",
+        "bz",
+        "cu",
+        "dh",
+        "dz",
+        "hy",
+        "st",
+        "uv",
+        "uy",
+        "vy"
+      ]
+    },
+    "st": {
+      "deficit_with_both_bases": 1,
+      "packing": [
+        "ahy",
+        "byz",
+        "cuy",
+        "dhz",
+        "stz"
+      ],
+      "bought": [
+        "ah",
+        "az",
+        "bz",
+        "cu",
+        "dh",
+        "dz",
+        "hy",
+        "st",
+        "uv",
+        "uy",
+        "vy"
+      ]
+    },
+    "st-uv": {
+      "deficit_with_both_bases": 0,
+      "packing": [
+        "ahy",
+        "byz",
+        "dhz",
+        "stz",
+        "uvy"
+      ],
+      "bought": [
+        "ah",
+        "az",
+        "bz",
+        "dh",
+        "dz",
+        "hy",
+        "st",
+        "uv",
+        "uy",
+        "vy"
+      ]
+    },
+    "uv": {
+      "deficit_with_both_bases": 1,
+      "packing": [
+        "ahy",
+        "asz",
+        "byz",
+        "dhz",
+        "uvy"
+      ],
+      "bought": [
+        "ah",
+        "as",
+        "az",
+        "bz",
+        "dh",
+        "dz",
+        "hy",
+        "st",
+        "uv",
+        "uy",
+        "vy"
+      ]
+    }
+  }
+}
