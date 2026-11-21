@@ -1,6 +1,5 @@
-"""Check the published PDF with Poppler or PDFium."""
+"""Check the published PDF with Poppler, Ghostscript or PDFium."""
 
-import json
 from pathlib import Path
 import re
 import shutil
@@ -20,20 +19,23 @@ def read_paper(path):
         first = subprocess.check_output(["pdftotext", "-f", "1", "-l", "1", str(path), "-"], text=True)
         body = subprocess.check_output(["pdftotext", str(path), "-"], text=True)
         return props, first, body
-    if shutil.which("gs") and shutil.which("perl"):
-        # Both tools and PDF::API2 ship in the same pinned image that typesets the paper.
-        query = ('my $pdf=PDF::API2->open($ARGV[0]); '
-                 'print encode_json({Title=>$pdf->title // "", Author=>$pdf->author // "", '
-                 'Pages=>"".$pdf->page_count});')
-        metadata = subprocess.run(["perl", "-MPDF::API2", "-MJSON::PP", "-e", query, str(path)],
-                                  stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
-        if metadata.returncode == 0:
-            props = json.loads(metadata.stdout)
-            args = ["gs", "-q", "-dSAFER", "-dBATCH", "-dNOPAUSE", "-sDEVICE=txtwrite",
-                    "-dTextFormat=3", "-sOutputFile=-"]
-            first = subprocess.check_output([*args, "-dFirstPage=1", "-dLastPage=1", str(path)], text=True)
-            body = subprocess.check_output([*args, str(path)], text=True)
-            return props, first, body
+    if shutil.which("gs"):
+        # The stock Ghostscript helper converts both PDFDocEncoding and UTF-16 metadata to UTF-8.
+        name = str(path.resolve())
+        query = ["gs", "-q", "-dBATCH", "-dNOPAUSE", "-dNODISPLAY", "-dSAFER",
+                 "--permit-file-read=" + name, "-sFile=" + name, "-dDumpMediaSizes=false",
+                 "-dDumpFontsNeeded=false", "pdf_info.ps"]
+        info = subprocess.check_output(query, text=True, encoding="utf-8")
+        props = dict(re.findall(r"^(Title|Author):[ \t]*(.*)$", info, re.M))
+        count = re.search(r" has (\d+) pages?\.?\s*$", info, re.M)
+        if not count:
+            raise ValueError("Ghostscript could not read the manuscript page count")
+        props["Pages"] = count.group(1)
+        args = ["gs", "-q", "-dSAFER", "-dBATCH", "-dNOPAUSE", "-sDEVICE=txtwrite",
+                "-dTextFormat=3", "-sOutputFile=-"]
+        first = subprocess.check_output([*args, "-dFirstPage=1", "-dLastPage=1", name], text=True)
+        body = subprocess.check_output([*args, name], text=True)
+        return props, first, body
     try:
         import pypdfium2
     except ImportError:
