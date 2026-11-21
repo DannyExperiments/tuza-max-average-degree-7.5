@@ -1,0 +1,5 @@
+* text=auto eol=lf
+*.g6 -text
+*.gz binary
+*.ots binary
+*.pdf binary
