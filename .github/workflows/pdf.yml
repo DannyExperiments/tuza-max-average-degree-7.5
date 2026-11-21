@@ -10,6 +10,7 @@ jobs:
     runs-on: ubuntu-24.04
     timeout-minutes: 20
     env:
+      TEX_IMAGE: ghcr.io/xu-cheng/texlive-historic-alpine@sha256:73a48f4fc1d3ee7357c8ea5d274af161541c0981432da33339eed7ac1f8e083d
       SOURCE_DATE_EPOCH: "1795219200"
       FORCE_SOURCE_DATE: "1"
       TZ: UTC
@@ -39,7 +40,9 @@ jobs:
           if grep -Eq 'There were undefined references|Citation .* undefined|Reference .* undefined|multiply defined|(Overfull|Underfull) .[hv]box|^!' ci-paper/manuscript.log; then
             exit 1
           fi
-          python3 -B scripts/check_paper.py ci-paper/manuscript.pdf
+          docker run --rm --network=none --read-only --cap-drop=ALL --tmpfs /tmp \
+            --user "$(id -u):$(id -g)" -v "$GITHUB_WORKSPACE:/src:ro" -w /src \
+            "$TEX_IMAGE" python3 -B scripts/check_paper.py ci-paper/manuscript.pdf
       - name: Upload rebuilt PDF and log
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
         with:

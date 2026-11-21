@@ -1,6 +1,6 @@
 # Reproducibility
 
-All mathematical verifiers use the data included in this repository. For the full local replay use Python 3.11 or later, a Clang C compiler, Bash, Git and either the Poppler commands `pdfinfo` and `pdftotext` or an interpreter with `pypdfium2`. The order-ten catalogue digest is also checked using `shasum`. Use an ordinary Python interpreter with assertions enabled. The verifier rejects `-O` and `-OO`.
+All mathematical verifiers use the data included in this repository. For the full local replay use Python 3.11 or later, a Clang C compiler, Bash, Git and either the Poppler commands `pdfinfo` and `pdftotext` or an interpreter with `pypdfium2`. The hosted jobs read PDF metadata with PDF::API2 and extract text with Ghostscript inside the same pinned TeX distribution used to build the manuscript. The order-ten catalogue digest is also checked using `shasum`. Use an ordinary Python interpreter with assertions enabled. The verifier rejects `-O` and `-OO`.
 
 ## Quick checks and exact replay
 

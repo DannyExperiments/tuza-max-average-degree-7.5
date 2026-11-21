@@ -8,11 +8,18 @@ permissions:
 jobs:
   verify:
     runs-on: ubuntu-24.04
-    timeout-minutes: 10
+    timeout-minutes: 20
+    env:
+      TEX_IMAGE: ghcr.io/xu-cheng/texlive-historic-alpine@sha256:73a48f4fc1d3ee7357c8ea5d274af161541c0981432da33339eed7ac1f8e083d
     steps:
       - name: Check out the candidate
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
-      - name: Verify the complete inventory and manuscript
-        run: bash scripts/verify.sh --integrity-only
+      - name: Verify the complete inventory
+        run: python3 -B scripts/verify_tree.py
+      - name: Inspect the frozen manuscript with the pinned PDF tools
+        run: |
+          docker run --rm --network=none --read-only --cap-drop=ALL --tmpfs /tmp \
+            --user "$(id -u):$(id -g)" -v "$GITHUB_WORKSPACE:/src:ro" -w /src \
+            "$TEX_IMAGE" python3 -B scripts/check_paper.py paper/manuscript.pdf
