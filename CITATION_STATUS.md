@@ -4,7 +4,7 @@
 
 ## Draft archive record
 
-The DOI and deposit date are unassigned. The proposed first archive version is `1.0.0`.
+Zenodo has reserved `10.5281/zenodo.24429313` for version `1.0.0`. The record is a draft. DOI registration and the public deposit date are pending. Use the manuscript commit above for citations until the archive record is public.
 
 | Field | Value |
 | --- | --- |
