@@ -1,10 +1,10 @@
 # Citation status
 
-**DannyExperiments.** *Tuza's inequality for maximum average degree at most 7.5 (= 15/2)*. Research preprint, 2026. Internally reviewed, not peer reviewed. The [manuscript commit](https://github.com/DannyExperiments/tuza-max-average-degree-7.5/commit/6cf60faf05ba110b4146a75a7073864e217887d1) identifies the version described here. [Citation metadata](CITATION.cff)
+**DannyExperiments.** (2026). *Tuza's inequality for maximum average degree at most 7.5 (= 15/2)* (Version 1.0.0) [Preprint]. Zenodo. Internally reviewed, not peer reviewed. [Version DOI](https://doi.org/10.5281/zenodo.24429313) · [Manuscript commit](https://github.com/DannyExperiments/tuza-max-average-degree-7.5/commit/6cf60faf05ba110b4146a75a7073864e217887d1) · [Citation metadata](CITATION.cff)
 
-## Draft archive record
+## Published archive record
 
-Zenodo has reserved `10.5281/zenodo.24429313` for version `1.0.0`. The record is a draft. DOI registration and the public deposit date are pending. Use the manuscript commit above for citations until the archive record is public.
+Zenodo published version 1.0.0 on November 21, 2026. Cite the version DOI to identify this exact PDF and source archive. The concept DOI links all versions. [Version 1.0.0](https://doi.org/10.5281/zenodo.24429313) · [All versions](https://doi.org/10.5281/zenodo.24429312)
 
 | Field | Value |
 | --- | --- |
@@ -21,7 +21,7 @@ Let ν(G) be the maximum number of edge-disjoint triangles in a finite simple gr
 
 The human project lead selected the problem, proposed rotating three-dimensional graph diagrams and requested independent checks. The [archive disclosure](AI_DISCLOSURE.md#disclosure-for-the-archive) supplies the remainder of the record description and identifies each system’s work.
 
-### Files for deposit
+### Deposited files
 
 | Filename | SHA-256 |
 | --- | --- |

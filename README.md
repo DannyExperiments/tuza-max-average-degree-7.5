@@ -3,6 +3,7 @@
 [![Verify public evidence](https://github.com/DannyExperiments/tuza-max-average-degree-7.5/actions/workflows/verify.yml/badge.svg)](https://github.com/DannyExperiments/tuza-max-average-degree-7.5/actions/workflows/verify.yml)
 [![Exact verifier replay](https://github.com/DannyExperiments/tuza-max-average-degree-7.5/actions/workflows/replay-exact-verifier.yml/badge.svg)](https://github.com/DannyExperiments/tuza-max-average-degree-7.5/actions/workflows/replay-exact-verifier.yml)
 [![PDF build](https://github.com/DannyExperiments/tuza-max-average-degree-7.5/actions/workflows/pdf.yml/badge.svg)](https://github.com/DannyExperiments/tuza-max-average-degree-7.5/actions/workflows/pdf.yml)
+[![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.24429312-blue.svg)](https://doi.org/10.5281/zenodo.24429312)
 
 For a finite simple graph $G$, let $\nu(G)$ be the maximum number of edge-disjoint triangles and $\tau(G)$ the minimum number of edges meeting every triangle. Let $H(G)$ be induced by the vertices of degree at least eight in $G$.
 
@@ -28,4 +29,4 @@ A simultaneous-avoidance statement on four path edges would imply Tuza’s conje
 
 Run `bash scripts/verify.sh` from a checkout for integrity and the exact replay through order nine. The order-ten computation is available separately. [Reproducibility](REPRODUCIBILITY.md) · [Repository contents](MANIFEST.md) · [Timestamp evidence](PROVENANCE.md)
 
-Use **DannyExperiments** for the preferred citation. [Citation metadata](CITATION.cff) · [Citation status](CITATION_STATUS.md) · [AI disclosure](AI_DISCLOSURE.md) · [Rights and data licenses](LICENSE_STATUS.md)
+Cite the November 21, 2026 preprint as **DannyExperiments**, version 1.0.0. [Version DOI](https://doi.org/10.5281/zenodo.24429313) · [Citation metadata](CITATION.cff) · [Archive record](CITATION_STATUS.md) · [AI disclosure](AI_DISCLOSURE.md) · [Rights and data licenses](LICENSE_STATUS.md)

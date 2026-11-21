@@ -2,7 +2,18 @@ cff-version: 1.2.0
 message: "If you use this research repository, cite it using the metadata below."
 title: "Tuza's inequality for maximum average degree at most 7.5 (= 15/2)"
 type: software
+version: 1.0.0
+date-released: 2026-11-21
+doi: "10.5281/zenodo.24429313"
+url: "https://doi.org/10.5281/zenodo.24429313"
 repository-code: "https://github.com/DannyExperiments/tuza-max-average-degree-7.5"
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.24429313"
+    description: "Version 1.0.0 of the preprint and its reproducibility archive."
+  - type: doi
+    value: "10.5281/zenodo.24429312"
+    description: "All versions of this work."
 authors:
   - name: "DannyExperiments"
 preferred-citation:
@@ -11,7 +22,10 @@ preferred-citation:
   authors:
     - name: "DannyExperiments"
   year: 2026
-  url: "https://github.com/DannyExperiments/tuza-max-average-degree-7.5"
+  version: 1.0.0
+  date-published: 2026-11-21
+  doi: "10.5281/zenodo.24429313"
+  url: "https://doi.org/10.5281/zenodo.24429313"
 keywords:
   - Tuza's conjecture
   - triangle packing
