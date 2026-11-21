@@ -17,9 +17,9 @@ For a finite simple graph $G$, let $\nu(G)$ be the maximum number of edge-disjoi
 
 ## Two high fans on the same five vertices
 
-![Two projections of the same five vertices. The first fan uses rim edge xb in solid copper and the second uses xz in dashed blue.](visuals/high-fans.svg)
+[![Two fans rotating together. The first uses the solid copper edge xb. The second uses the dashed blue edge xz.](visuals/high-fans-rotation.gif)](https://dannyexperiments.github.io/tuza-max-average-degree-7.5/visuals/high-fans.html)
 
-The four spokes from *a* and the rim edges *bc* and *cz* are shared. Exchanging *xb* for *xz* changes the seven-edge set counted by Theorem C. To rotate the diagram, download the HTML file and open it in a browser. It works offline. [Interactive 3D figure](visuals/high-fans.html)
+Both fans use the four spokes from *a* and the rim edges *bc* and *cz*. Follow *x* as the diagram turns. Its rim edge goes to *b* in the first fan and to *z* in the second. That single exchange gives the two different seven-edge sets counted by Theorem C. [Rotate the figure yourself](https://dannyexperiments.github.io/tuza-max-average-degree-7.5/visuals/high-fans.html) · [Still image](visuals/high-fans.svg)
 
 ## Further results
 

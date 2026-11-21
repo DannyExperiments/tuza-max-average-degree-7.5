@@ -3,6 +3,7 @@
 .github/workflows/replay-exact-verifier.yml
 .github/workflows/verify.yml
 .gitignore
+.nojekyll
 AI_DISCLOSURE.md
 CITATION.cff
 CITATION_STATUS.md
@@ -34,12 +35,14 @@ canonical/two-fans.md
 evidence/timestamps/MANIFEST-2.sha256.ots
 evidence/timestamps/MANIFEST-3.sha256.ots
 evidence/timestamps/MANIFEST.sha256.ots
+index.html
 paper/BUILD.md
 paper/manuscript.pdf
 paper/manuscript.tex
 paper/references.bib
 scripts/check_figure.py
 scripts/check_paper.py
+scripts/render_fan_rotation.py
 scripts/verify.sh
 scripts/verify_tree.py
 verification/DATA_SOURCES.md
@@ -94,5 +97,6 @@ verification/small_census/census.py
 verification/small_census/covers.svg
 verification/small_census/verify.py
 verification/verify_pairs.py
+visuals/high-fans-rotation.gif
 visuals/high-fans.html
 visuals/high-fans.svg
