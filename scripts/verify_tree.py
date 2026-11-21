@@ -90,7 +90,15 @@ def check_payload(name):
                            ("session link", SESSION), ("credential", CREDENTIAL)):
         require(not pattern.search(data), f"{label} pattern in {name}")
     if name != "AI_DISCLOSURE.md":
-        require(not CREDIT.search(data), f"Attribution outside disclosure: {name}")
+        outside_note = data
+        if name == "paper/manuscript.tex":
+            heading = rb"\section*{AI disclosure}" + b"\n"
+            require(data.count(heading) == 1, "Expected one unnumbered manuscript disclosure")
+            before, _, rest = data.partition(heading)
+            note, boundary, after = rest.partition(b"\n\n")
+            require(boundary and CREDIT.search(note), "Missing manuscript disclosure paragraph")
+            outside_note = before + after
+        require(not CREDIT.search(outside_note), f"Attribution outside disclosure: {name}")
     if ext == ".html":
         require(name == "visuals/high-fans.html", f"Unexpected HTML document: {name}")
     if ext == ".md":

@@ -1,17 +1,17 @@
 cff-version: 1.2.0
 message: "If you use this research repository, cite it using the metadata below."
-title: "Tuza's inequality at maximum average degree 15/2"
+title: "Tuza's inequality for maximum average degree at most 7.5 (= 15/2)"
 type: software
-repository-code: "https://github.com/DannyExperiments/tuza-mad-15-2"
+repository-code: "https://github.com/DannyExperiments/tuza-max-average-degree-7.5"
 authors:
   - name: "DannyExperiments"
 preferred-citation:
   type: article
-  title: "Tuza's inequality at maximum average degree 15/2"
+  title: "Tuza's inequality for maximum average degree at most 7.5 (= 15/2)"
   authors:
     - name: "DannyExperiments"
   year: 2026
-  url: "https://github.com/DannyExperiments/tuza-mad-15-2"
+  url: "https://github.com/DannyExperiments/tuza-max-average-degree-7.5"
 keywords:
   - Tuza's conjecture
   - triangle packing

@@ -21,7 +21,7 @@ pdflatex -interaction=nonstopmode -halt-on-error manuscript.tex
 
 ## With an offline TeX cache
 
-The distributed PDF was produced from the two files above using Tectonic 0.17.0 with an already populated cache. Two independent output directories produced identical PDF bytes using the release date at 00:00 UTC as the reproducible timestamp.
+The distributed PDF was produced from the two files above using Tectonic 0.17.0 with an already populated cache. Two independent output directories produced identical PDF bytes using the fixed manuscript timestamp of 21 November 2026 at 00:00 UTC.
 
 ~~~sh
 outdir="$(mktemp -d)"
@@ -32,12 +32,12 @@ The engine ran TeX, BibTeX, the cross-reference passes and the PDF writer. A reb
 
 ## Checked release copy
 
-The PDF has 11 A4 pages with selectable text. The visible title and PDF Title both read **Tuza's inequality at maximum average degree 15/2**. The PDF Author is empty. Six bibliography entries resolve, with nine public article or DOI links. Every page was rendered and inspected, including the seven-edge fan, the donor tables, the strict endpoint argument, the four-edge proposition and the census table. The final TeX log contained no unresolved references, missing characters or box warnings. This verifies typesetting and source parity. The manuscript is internally reviewed, not peer reviewed.
+The PDF has 11 A4 pages with selectable text. The visible title and PDF Title both read **Tuza's inequality for maximum average degree at most 7.5 (= 15/2)**. The PDF Author is empty. Theorem 1 identifies both Kandasamy inputs. The unnumbered AI disclosure precedes the references. Six bibliography entries resolve, with nine public article or DOI links. Every page was rendered and inspected, including the seven-edge fan, the donor tables, the strict endpoint argument, the four-edge proposition and the census table. The final TeX log contained no unresolved references, missing characters or box warnings. This verifies typesetting and source parity. The manuscript is internally reviewed, not peer reviewed.
 
 | File | SHA-256 |
 | --- | --- |
-| manuscript.tex | 4ab81834a2591b3b7f2c1ae28efa70e32d2f97354a4f2c7bfa7af2b6929bfb41 |
+| manuscript.tex | 296ca7e8cfdab27a1b41d3d8bd78e9566a4038490641156586a1fbdd0bc22a2f |
 | references.bib | 8a9c1c58b5a5fb6a6a8226560e5e9334c615c11aeba52d092686e1920a2512c8 |
-| manuscript.pdf | 11eb1645a209ef06e746dffb3d8eccbd51be2c21e02f59d58f20fce056aa5f85 |
+| manuscript.pdf | 3c74f5ece425e7de70b646281fad9b84ef13e3c99014022a76ccb5e9925d8f4e |
 
 The [verification guide](../verification/README.md) describes the finite graph and arithmetic checks. The proofs using those checks and the dependence on Kandasamy's maximum-degree-ten preprint appear in the manuscript.

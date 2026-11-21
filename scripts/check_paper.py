@@ -7,6 +7,8 @@ import subprocess
 import sys
 import unicodedata
 
+from verify_tree import CREDIT
+
 
 def normalized(text):
     return " ".join(unicodedata.normalize("NFKC", text).replace("’", "'").split()).casefold()
@@ -51,20 +53,33 @@ def check(path):
     if not path.is_file() or not path.read_bytes().startswith(b"%PDF-"):
         raise ValueError("Missing or invalid PDF")
     properties, first, body = read_paper(path)
-    expected_title = "tuza's inequality at maximum average degree 15/2"
+    expected_title = "tuza's inequality for maximum average degree at most 7.5 (= 15/2)"
     if normalized(properties.get("Title", "")) != expected_title:
         raise ValueError("Incorrect PDF title metadata")
     if properties.get("Author", "").strip():
         raise ValueError("PDF Author metadata must be empty")
     if expected_title not in normalized(first):
         raise ValueError("Manuscript title missing from first page")
-    if int(properties.get("Pages", "0")) < 2 or "references" not in normalized(body):
+    text = normalized(body)
+    if int(properties.get("Pages", "0")) < 2 or "references" not in text:
         raise ValueError("Expected a multipage mathematical paper with references")
-    markers = ["Danny" + "Experiments", "Cl" + "aude", "Open" + "AI", "Ast" + "ra", "G" + "ia"]
-    for marker in markers:
-        if re.search(r"\b" + re.escape(marker) + r"\b", body, re.I):
-            raise ValueError("The manuscript contains an attribution reserved for release metadata")
-    print(f"PASS authorless PDF, title, body and bibliography ({properties['Pages'].strip()} pages)")
+    first_result = re.search(r"\btheorem 1\b(.*?)\btheorem 2\b", text)
+    if not first_result or not all(term in first_result[1] for term in ("lemma 3.5", "theorem 1.1")):
+        raise ValueError("Theorem 1 must identify both the local input and the endpoint input")
+    before, heading, tail = text.partition("ai disclosure")
+    note, references, bibliography = tail.partition("references")
+    if not heading or not references or text.count("ai disclosure") != 1:
+        raise ValueError("Expected one disclosure immediately before the references")
+    expected_names = (Path(__file__).resolve().parents[1] / "AI_DISCLOSURE.md").read_bytes().lower()
+    if set(CREDIT.findall(note.encode())) != set(CREDIT.findall(expected_names)):
+        raise ValueError("The manuscript disclosure must identify both systems")
+    for phrase in ("under human direction", "internally reviewed, not peer reviewed",
+                   "neither system listed as an author"):
+        if phrase not in note:
+            raise ValueError("Incomplete AI-use or review statement")
+    if CREDIT.search((before + bibliography).encode()) or "dannyexperiments" in text:
+        raise ValueError("Unexpected byline or model attribution outside the disclosure")
+    print(f"PASS authorless PDF, title, Theorem 1 inputs, disclosure and bibliography ({properties['Pages'].strip()} pages)")
 
 
 if __name__ == "__main__":

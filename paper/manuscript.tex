@@ -6,7 +6,7 @@
 \usepackage{amsmath,amssymb,mathtools,microtype}
 \usepackage[hidelinks]{hyperref}
 \emergencystretch=2em
-\hypersetup{pdftitle={Tuza's inequality at maximum average degree 15/2},
+\hypersetup{pdftitle={Tuza's inequality for maximum average degree at most 7.5 (= 15/2)},
  pdfauthor={},pdfsubject={Edge-disjoint triangles and triangle edge covers},
  pdfkeywords={Tuza conjecture, maximum average degree, triangle packing}}
 \newtheorem{theorem}{Theorem}
@@ -22,15 +22,15 @@
 \renewcommand{\@settitle}{\begin{center}\baselineskip14\p@\relax
   \bfseries\@title\end{center}}
 \makeatother
-\title[Tuza's inequality at maximum average degree 15/2]{Tuza's inequality at maximum average degree 15/2}
+\title[Tuza's inequality for maximum average degree at most 7.5 (= 15/2)]{Tuza's inequality for maximum average degree at most 7.5 (= 15/2)}
 \date{}
 \begin{document}
 \raggedbottom
 \begin{abstract}
 Let $\nu$ and $\tau$ be the edge packing and edge covering numbers of
 the triangles of a finite simple graph. We prove $\tau\le 2\nu$ when
-the maximum average degree is at most $15/2$, using Kandasamy's
-maximum-degree-ten theorem at equality. We also prove that the
+the maximum average degree is at most $7.5=15/2$. We use Kandasamy's
+local octahedral reduction and, at equality, his maximum-degree-ten theorem. We also prove that the
 vertices of degree at least eight in any counterexample contain two
 distinct, possibly overlapping, copies of $K_1\vee P_4$. A shorter
 argument handles the case in which those vertices induce a triangle-free
@@ -38,8 +38,8 @@ graph. We state the finite local certificate domains and give an open
 simultaneous-packing condition sufficient for the unrestricted conjecture.
 \end{abstract}
 \maketitle
-\markboth{TUZA'S INEQUALITY AT MAXIMUM AVERAGE DEGREE 15/2}
-         {TUZA'S INEQUALITY AT MAXIMUM AVERAGE DEGREE 15/2}
+\markboth{TUZA'S INEQUALITY FOR MAXIMUM AVERAGE DEGREE AT MOST 7.5 (= 15/2)}
+         {TUZA'S INEQUALITY FOR MAXIMUM AVERAGE DEGREE AT MOST 7.5 (= 15/2)}
 
 \section{Statements and conventions}
 All graphs are finite and simple. A \emph{packing} is a set of
@@ -56,10 +56,11 @@ Put
 with $\mad(\varnothing)=0$. Degrees defining $H(G)$ are taken in $G$.
 
 \begin{theorem}[Maximum average degree]\label{thm:density}
-If $\mad(G)\le15/2$, then $\tau(G)\le2\nu(G)$, assuming
-Kandasamy's Theorem~1.1 \cite{kandasamy}. For $\mad(G)<15/2$ the
-same conclusion follows without that maximum-degree-ten theorem.
-Both statements use the local inputs in Section~\ref{sec:local}.
+If $\mad(G)\le 7.5$, then $\tau(G)\le 2\nu(G)$.
+For $\mad(G)<7.5$, the local inputs in Section~\ref{sec:local}
+include Kandasamy's Lemma~3.5 for a degree-six vertex with a
+connected octahedral link \cite{kandasamy}. At $\mad(G)=7.5$, the
+proof also uses his maximum-degree-ten theorem (Theorem~1.1).
 \end{theorem}
 
 \begin{theorem}[Triangle-free high subgraph]\label{thm:free}
@@ -896,6 +897,12 @@ scope and inputs of each implemented check. Certificate and
 arithmetic replays do not mechanize the graph-theoretic deductions
 in this paper or certify the external maximum-degree theorem.
 \end{minipage}
+
+\section*{AI disclosure}
+Under human direction, Gia (OpenAI Codex, GPT-6.2 Astra) developed
+the arguments and Claude (Anthropic) checked selected results and
+performed the census for this work (internally reviewed, not peer
+reviewed), with neither system listed as an author.
 
 \renewcommand{\bibliofont}{\footnotesize\raggedright}
 \bibliographystyle{amsplain}

@@ -1,14 +1,14 @@
-# Tuza's inequality at maximum average degree 15/2
+# Tuza's inequality for maximum average degree at most 7.5 (= 15/2)
 
-[![Verify public evidence](https://github.com/DannyExperiments/tuza-mad-15-2/actions/workflows/verify.yml/badge.svg)](https://github.com/DannyExperiments/tuza-mad-15-2/actions/workflows/verify.yml)
-[![Exact verifier replay](https://github.com/DannyExperiments/tuza-mad-15-2/actions/workflows/replay-exact-verifier.yml/badge.svg)](https://github.com/DannyExperiments/tuza-mad-15-2/actions/workflows/replay-exact-verifier.yml)
-[![PDF build](https://github.com/DannyExperiments/tuza-mad-15-2/actions/workflows/pdf.yml/badge.svg)](https://github.com/DannyExperiments/tuza-mad-15-2/actions/workflows/pdf.yml)
+[![Verify public evidence](https://github.com/DannyExperiments/tuza-max-average-degree-7.5/actions/workflows/verify.yml/badge.svg)](https://github.com/DannyExperiments/tuza-max-average-degree-7.5/actions/workflows/verify.yml)
+[![Exact verifier replay](https://github.com/DannyExperiments/tuza-max-average-degree-7.5/actions/workflows/replay-exact-verifier.yml/badge.svg)](https://github.com/DannyExperiments/tuza-max-average-degree-7.5/actions/workflows/replay-exact-verifier.yml)
+[![PDF build](https://github.com/DannyExperiments/tuza-max-average-degree-7.5/actions/workflows/pdf.yml/badge.svg)](https://github.com/DannyExperiments/tuza-max-average-degree-7.5/actions/workflows/pdf.yml)
 
 For a finite simple graph $G$, let $\nu(G)$ be the maximum number of edge-disjoint triangles and $\tau(G)$ the minimum number of edges meeting every triangle. Let $H(G)$ be induced by the vertices of degree at least eight in $G$.
 
 | Result | Statement |
 | --- | --- |
-| A. Maximum average degree | If mad(G) ≤ 15/2, then $\tau(G)\le 2\nu(G)$. The endpoint uses Kandasamy’s Theorem 1.1. |
+| A. Maximum average degree | If mad(G) ≤ 7.5 (= 15/2), then $\tau(G)\le 2\nu(G)$. The strict bound uses Kandasamy’s local Lemma 3.5. Equality also uses his Theorem 1.1. |
 | B. Triangle-free high subgraph | If $H(G)$ contains no triangle, then $\tau(G)\le 2\nu(G)$. Degrees and triangle multiplicities elsewhere are unrestricted. |
 | C. Two high fans | If $\tau(G)>2\nu(G)$, then $H(G)$ contains two copies of $K_1\vee P_4$ with distinct seven-edge sets. They may overlap, including on all five vertices. |
 

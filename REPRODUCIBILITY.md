@@ -39,6 +39,6 @@ The counts are augmentation instances. Isomorphic supports may recur. The histor
 
 ## PDF and hosted checks
 
-The PDF workflow copies only the manuscript source and bibliography into an empty directory and compiles them using the same pinned TeX distribution as the repository template. It checks the typeset title, author metadata and references and makes the rebuilt PDF available as a run artifact. Different TeX engines can produce different PDF bytes from identical sources. The release checksum identifies the exact stored PDF. [Paper build](paper/BUILD.md)
+The PDF workflow copies only the manuscript source and bibliography into an empty directory and compiles them using the same pinned TeX distribution as the repository template. It checks the typeset title, empty author metadata, Theorem 1 dependencies, AI disclosure and references and makes the rebuilt PDF available as a run artifact. Different TeX engines can produce different PDF bytes from identical sources. The release checksum identifies the exact stored PDF. [Paper build](paper/BUILD.md)
 
 The three workflows target Ubuntu 24.04, use actions pinned by commit, and grant read-only access to repository contents. Each badge links to the actual run history. [Evidence check](.github/workflows/verify.yml) · [Exact replay](.github/workflows/replay-exact-verifier.yml) · [PDF build](.github/workflows/pdf.yml)
