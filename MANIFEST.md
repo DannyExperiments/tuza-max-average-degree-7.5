@@ -6,6 +6,7 @@
 | [PROBLEM_AND_PROOF.md](PROBLEM_AND_PROOF.md) | Statements and key proof steps for the three theorems |
 | [canonical/](canonical/) | Detailed proof records for the structural and numerical arguments |
 | [CLAIMS_EVIDENCE_MATRIX.md](CLAIMS_EVIDENCE_MATRIX.md) | Status of each claim and the inputs it requires |
+| [visuals/](visuals/) | Rotatable and print-friendly views of two selected high fans |
 | [verification/](verification/) | Exact local verifiers, graph data and census code |
 | [evidence/timestamps/](evidence/timestamps/) | Detached commitments for the three source snapshots |
 | [PROVENANCE.md](PROVENANCE.md) | Manifest digests, content commits and Bitcoin attestation status |

@@ -12,7 +12,7 @@ ROOT = Path(__file__).resolve().parents[1]
 ALLOWLIST = "PUBLIC_ALLOWLIST.txt"
 SUMS = "SHA256SUMS.txt"
 PDF = "paper/manuscript.pdf"
-TYPES = {"", ".bib", ".c", ".cff", ".g6", ".gz", ".json", ".md", ".ots", ".pdf",
+TYPES = {"", ".bib", ".c", ".cff", ".g6", ".gz", ".html", ".json", ".md", ".ots", ".pdf",
          ".py", ".sh", ".svg", ".tex", ".txt", ".yml"}
 CREDIT = re.compile(rb"\b(?:" + b"|".join([b"G" + b"ia", b"Cl" + b"aude", b"Anthro" + b"pic",
                                           b"Open" + b"AI", b"Ast" + b"ra"]) + rb")\b", re.I)
@@ -91,6 +91,8 @@ def check_payload(name):
         require(not pattern.search(data), f"{label} pattern in {name}")
     if name != "AI_DISCLOSURE.md":
         require(not CREDIT.search(data), f"Attribution outside disclosure: {name}")
+    if ext == ".html":
+        require(name == "visuals/high-fans.html", f"Unexpected HTML document: {name}")
     if ext == ".md":
         check_links(name, data)
     if ext == ".svg":

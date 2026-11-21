@@ -13,7 +13,7 @@
        r(p), r(q) ≥ 6 because each sees the union
 ~~~
 
-**Theorem.** For every finite simple graph $G$ with $\operatorname{mad}(G)\le15/2$, $\tau_\triangle(G)\le2\nu_\triangle(G)$. Here the maximum average degree is the maximum of $2|E(F)|/|V(F)|$ over all nonempty subgraphs $F$, and $\tau,\nu$ count triangle-cover edges and edge-disjoint triangles, respectively. The following proof extends the earlier $989/132$ derivation by $1/132$. It uses the earlier local certificates, including Gupta's degree-seven pair bank, and the maximum-degree-ten theorem for strictness. [Earlier proof](density-989-132.md#count) · [Endpoint arithmetic](../verification/check_endpoint.py)
+**Theorem.** For every finite simple graph $G$ with $\mathrm{mad}(G)\le15/2$, $\tau_\triangle(G)\le2\nu_\triangle(G)$. Here the maximum average degree is the maximum of $2|E(F)|/|V(F)|$ over all nonempty subgraphs $F$, and $\tau,\nu$ count triangle-cover edges and edge-disjoint triangles, respectively. The following proof extends the earlier $989/132$ derivation by $1/132$. It uses the earlier local certificates, including Gupta's degree-seven pair bank, and the maximum-degree-ten theorem for strictness. [Earlier proof](density-989-132.md#count) · [Endpoint arithmetic](../verification/check_endpoint.py)
 
 ### Starting inequalities
 

@@ -11,7 +11,7 @@ bash scripts/verify.sh --integrity-only
 bash scripts/verify.sh
 ```
 
-The first command checks every allowed path and SHA-256 digest and inspects the PDF. The second also runs the local proofs’ finite checks and the census through order nine. The default replay copies inputs to a temporary directory and compares fresh results against the values in the reference file. The independently reproducible steps and exact data sources are listed alongside the verifiers. [Reference values](verification/reference.json) · [Data credits](verification/DATA_SOURCES.md)
+The first command checks every allowed path and SHA-256 digest and inspects the PDF. It also checks the edges and triangular faces of the interactive figure against both static projections. The second also runs the local proofs’ finite checks and the census through order nine. The default replay copies inputs to a temporary directory and compares fresh results against the values in the reference file. The independently reproducible steps and exact data sources are listed alongside the verifiers. [Reference values](verification/reference.json) · [Data credits](verification/DATA_SOURCES.md)
 
 | Check | Expected evidence |
 | --- | --- |

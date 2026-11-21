@@ -8,11 +8,17 @@ For a finite simple graph $G$, let $\nu(G)$ be the maximum number of edge-disjoi
 
 | Result | Statement |
 | --- | --- |
-| A. Maximum average degree | If $\operatorname{mad}(G)\le 15/2$, then $\tau(G)\le 2\nu(G)$. The endpoint uses Kandasamy’s Theorem 1.1. |
+| A. Maximum average degree | If mad(G) ≤ 15/2, then $\tau(G)\le 2\nu(G)$. The endpoint uses Kandasamy’s Theorem 1.1. |
 | B. Triangle-free high subgraph | If $H(G)$ contains no triangle, then $\tau(G)\le 2\nu(G)$. Degrees and triangle multiplicities elsewhere are unrestricted. |
 | C. Two high fans | If $\tau(G)>2\nu(G)$, then $H(G)$ contains two copies of $K_1\vee P_4$ with distinct seven-edge sets. They may overlap, including on all five vertices. |
 
 **Status:** internally reviewed, not peer reviewed. The unrestricted conjecture is open. The proofs use published reductions, cited preprints and finite local certificates. [Paper (PDF)](paper/manuscript.pdf) · [Proof guide](PROBLEM_AND_PROOF.md) · [Detailed proofs](canonical/README.md) · [Claims and dependencies](CLAIMS_EVIDENCE_MATRIX.md)
+
+## Two high fans on the same five vertices
+
+![Two projections of the same five vertices. The first fan uses rim edge xb in solid copper and the second uses xz in dashed blue.](visuals/high-fans.svg)
+
+The four spokes from *a* and the rim edges *bc* and *cz* are shared. Exchanging *xb* for *xz* changes the seven-edge set counted by Theorem C. To rotate the diagram, download the HTML file and open it in a browser. It works offline. [Interactive 3D figure](visuals/high-fans.html)
 
 ## Further results
 

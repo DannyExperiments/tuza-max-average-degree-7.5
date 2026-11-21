@@ -24,7 +24,7 @@
 
 The top panel shows all possible identifications after applying the neighborhood-union lemma. The lower panel draws the only cardinality pattern for the stated pair of high-neighbor counts, up to relabeling. The vertices $x$ and $z$ are nonadjacent, $h$ subsumes both, and edges outside these two open neighborhoods can be arbitrary subject to the ambient hypotheses. Only the indicated incidences and degrees are used. In particular, the third common vertex $y$ sends at most $1/5$ of its weight to $h$.
 
-**Theorem.** Every finite simple graph $G$ with $\operatorname{mad}(G)\le127/17$ satisfies $\tau_\triangle(G)\le2\nu_\triangle(G)$. The thresholds $230/31$ and $209/28$ follow as weaker consequences. The resulting donor coefficient is $17/8$. Its only remaining equality row is a degree-nine vertex paying exactly one five. Attainment of that row in a minimal violation is unknown.
+**Theorem.** Every finite simple graph $G$ with $\mathrm{mad}(G)\le127/17$ satisfies $\tau_\triangle(G)\le2\nu_\triangle(G)$. The thresholds $230/31$ and $209/28$ follow as weaker consequences. The resulting donor coefficient is $17/8$. Its only remaining equality row is a degree-nine vertex paying exactly one five. Attainment of that row in a minimal violation is unknown.
 
 ### Accounting in a subgraph-minimal violation
 

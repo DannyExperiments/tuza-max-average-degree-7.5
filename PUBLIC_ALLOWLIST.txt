@@ -38,6 +38,7 @@ paper/BUILD.md
 paper/manuscript.pdf
 paper/manuscript.tex
 paper/references.bib
+scripts/check_figure.py
 scripts/check_paper.py
 scripts/verify.sh
 scripts/verify_tree.py
@@ -93,3 +94,5 @@ verification/small_census/census.py
 verification/small_census/covers.svg
 verification/small_census/verify.py
 verification/verify_pairs.py
+visuals/high-fans.html
+visuals/high-fans.svg

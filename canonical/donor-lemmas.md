@@ -17,7 +17,7 @@
 
 The lines show incidence shares arriving at the high vertex. A high receives weight one for itself. The degree-eight panel depicts its two-high-neighbor case. The degree-nine panel reserves the last neighbor even when it contributes zero weight.
 
-**Proposition.** Every finite simple graph with $\operatorname{mad}(G)\le733/99$ satisfies $\tau_\triangle(G)\le2\nu_\triangle(G)$. The largest donor ratio allowed by the checked rows is $99/40$, at degree nine. Every row of degree at least eleven is strictly below it. The change from $37/5$ is $2/495$.
+**Proposition.** Every finite simple graph with $\mathrm{mad}(G)\le733/99$ satisfies $\tau_\triangle(G)\le2\nu_\triangle(G)$. The largest donor ratio allowed by the checked rows is $99/40$, at degree nine. Every row of degree at least eleven is strictly below it. The change from $37/5$ is $2/495$.
 
 Write $H=\{h:d(h)\ge8\}$, $r(y)=|N(y)\cap H|$, $j=|N(h)\cap H|$, and let $f$ count the fives subsumed by $h$. For a subgraph-minimal violation let $s(v)$ be the final charge above seven under Puleo's rules, and $w(h)=1+\sum_{y\in N(h)\setminus H}1/r(y)$. Every nonhigh vertex with $r=3$ is a five subsumed by all three high neighbors. All others have $r\ge4$. Thus $w\le1+(d-j)/4+f/12$, and the coarser $w\le1+(d-j)/3$ also holds. [Normalized count and preceding charge rows](donor-lemmas.md#fractional) · [Seven-vertex and low-neighbor transfer](seven-links.md#three-high)
 
@@ -74,7 +74,7 @@ Every subgraph-minimal violation has average degree strictly greater than $7+40/
 
 The five return arrows have distinct recipients at a given vertex $x$. A high vertex may receive arrows from several fives.
 
-**Proposition.** Every finite simple graph $G$ with $\operatorname{mad}(G)\le363/49$ satisfies $\tau_\triangle(G)\le2\nu_\triangle(G)$. The following proof uses the preceding $733/99$ donor table. It is independent of the current five-hub enumeration. The numerical gain over the previous endpoint is $20/4851$. [Inherited donor inequalities](donor-lemmas.md#fractional)
+**Proposition.** Every finite simple graph $G$ with $\mathrm{mad}(G)\le363/49$ satisfies $\tau_\triangle(G)\le2\nu_\triangle(G)$. The following proof uses the preceding $733/99$ donor table. It is independent of the current five-hub enumeration. The numerical gain over the previous endpoint is $20/4851$. [Inherited donor inequalities](donor-lemmas.md#fractional)
 
 Work in a subgraph-minimal violation. Let $s(v)$ be final charge above seven under Puleo’s rules. Every $s(v)\ge0$, and $\sum_vs(v)=2|E|-7|V|$. An edge from a subsumer to a five carries $2/3$. Let $L$ be the set of degree-five vertices whose actual link is $K_5$. For $x\in L$ all five neighbors subsume it and are of degree at least nine. Since $x$ does not pay any lower neighbor, its surplus is exactly
 $$
@@ -97,7 +97,7 @@ $$
 $$
 Thus every subgraph-minimal violation has average degree strictly greater than $7+20/49=363/49$. A subgraph of a graph with maximum average degree at most $363/49$ inherits the bound, proving the inclusive statement. [Fraction-by-fraction table](donor-lemmas.md#fractional) · [Kandasamy, Theorem 1.1](https://arxiv.org/html/2610.15269v1#S1)
 
-Puleo’s unrestricted threshold is $\operatorname{mad}<7$. Tsujimura’s $25/2$ theorem requires additional triangle-overlap hypotheses, while Kandasamy’s global degree-ten theorem has a maximum-degree hypothesis. The $363/49$ deduction here applies with arbitrary edge codegrees. [Puleo](https://doi.org/10.1016/j.ejc.2015.03.006) · [Tsujimura, Theorem 1.1](https://arxiv.org/html/2611.11128v2#Sx1) · [Kandasamy, Theorem 1.1](https://arxiv.org/abs/2610.15269)
+Puleo’s unrestricted threshold is $\mathrm{mad}<7$. Tsujimura’s $25/2$ theorem requires additional triangle-overlap hypotheses, while Kandasamy’s global degree-ten theorem has a maximum-degree hypothesis. The $363/49$ deduction here applies with arbitrary edge codegrees. [Puleo](https://doi.org/10.1016/j.ejc.2015.03.006) · [Tsujimura, Theorem 1.1](https://arxiv.org/html/2611.11128v2#Sx1) · [Kandasamy, Theorem 1.1](https://arxiv.org/abs/2610.15269)
 
 **Alternative endpoint check.** The earlier occurrence theorem also forces strictness. Equality would require all highs to be eights and all their rows to attain $49/20$. Then five-vertices are impossible because their subsumers have degree at least nine. Nonthin sixes would need subsumers even though eights cannot subsume them, and thin sixes cannot neighbor any eight or seven. All nonhighs are therefore sevens. Each high has exactly two high peers and, by equality in its weight estimate, five seven-neighbors with $r=4$ and one with $r=5$. If there are $a>0$ eights, the counts of the two types of sevens are $5a/4$ and $a/5$. Hence exactly $4/29$ of the sevens have $r\ge5$, contradicting the previously proved lower bound $3/13$. This version dispenses with the global maximum-degree-ten theorem for strictness, while retaining the local thin-six and occurrence inputs.  · [Degree-eight and low-vertex facts](donor-lemmas.md#fractional)
 
@@ -200,7 +200,7 @@ The public verifier evaluates all 11,368 five-mark placements on the retained cl
     p,q,r,t must be considered when selecting any of them for deletion.
 ~~~
 
-**Proposition.** In a subgraph-minimal Tuza violation, a nine with exactly three neighbors of degree at least eight cannot subsume both a five with exactly three such neighbors and a nonthin six. The two links force ten distinct displayed vertices, six optional edges, and an affordable reduction on all 64 assignments. The unrestricted density endpoint requested for this check, $\operatorname{mad}(G)\le7+8/19=141/19$, follows inclusively from the prior donor bounds. ****
+**Proposition.** In a subgraph-minimal Tuza violation, a nine with exactly three neighbors of degree at least eight cannot subsume both a five with exactly three such neighbors and a nonthin six. The two links force ten distinct displayed vertices, six optional edges, and an affordable reduction on all 64 assignments. The unrestricted density endpoint requested for this check, $\mathrm{mad}(G)\le7+8/19=141/19$, follows inclusively from the prior donor bounds. ****
 
 ### The forced edges
 
@@ -260,7 +260,7 @@ In the first panel $h,a,b$ are the only high neighbors of $y$, and the three dra
 
 ### Fixed verdict
 
-**Every subgraph-minimal violation of Tuza has average degree strictly above $22/3$.** Therefore every finite simple graph $G$ with $\operatorname{mad}(G)\le22/3$ satisfies $\tau_\triangle(G)\le2\nu_\triangle(G)$. The calculation uses each nonhigh vertex's actual number of high neighbors, the checked seven-link count, and a local Fano-line reduction. The threshold improves the preceding $80/11$ by $2/33$. [Preceding degree-nine reduction and charge table](donor-lemmas.md#nine-budget)
+**Every subgraph-minimal violation of Tuza has average degree strictly above $22/3$.** Therefore every finite simple graph $G$ with $\mathrm{mad}(G)\le22/3$ satisfies $\tau_\triangle(G)\le2\nu_\triangle(G)$. The calculation uses each nonhigh vertex's actual number of high neighbors, the checked seven-link count, and a local Fano-line reduction. The threshold improves the preceding $80/11$ by $2/33$. [Preceding degree-nine reduction and charge table](donor-lemmas.md#nine-budget)
 
 #### Exactly three high neighbors
 
@@ -298,7 +298,7 @@ The exception has exactly three lows, all subsumed fives. Each open neighborhood
 
 For every $d\ge11$, the earlier charge bound gives $3s\ge d-7$. If $d\ge13$, $w\le1+d/3<d-7$. For $d=12$, $j\ge1$ gives $w\le1+11/3<5$, and $j=0$ gives $w\le4$. For $d=11$, $j\ge3$ gives $w\le1+8/3<4$, while $j=0$ or $1$ gives $w\le1+11/4<4$. It remains to handle $d=11,j=2$. A thin-six neighbor would give four other high neighbors in its octahedral link; subsuming a nonthin six would give at least three. Any subsumed five must therefore have $h$ and the same two other highs as subsumers. Two such fives would have neighborhood union of size at most seven and hence clique links, forcing at least four fellow high subsumers, impossible. Thus the eleven loses at most $2/3$, giving $s\ge10/3$ and $w\le4<3s$. **Every donor of degree at least eleven satisfies strict inequality.**
 
-Kandasamy's maximum-degree-ten theorem forces at least one such donor in a violation. It follows that $|V|=\sum_h w(h)<3\sum_v s(v)=3(2|E|-7|V|)$. The average degree is strictly above $22/3$. A counterexample with $\operatorname{mad}\le22/3$ would contain a subgraph-minimal one satisfying the same maximum-average-degree bound, proving the endpoint. Kandasamy's global theorem remains a cited preprint-level dependency for strictness. [Kandasamy, Theorem 1.1](https://arxiv.org/abs/2610.15269)
+Kandasamy's maximum-degree-ten theorem forces at least one such donor in a violation. It follows that $|V|=\sum_h w(h)<3\sum_v s(v)=3(2|E|-7|V|)$. The average degree is strictly above $22/3$. A counterexample with $\mathrm{mad}\le22/3$ would contain a subgraph-minimal one satisfying the same maximum-average-degree bound, proving the endpoint. Kandasamy's global theorem remains a cited preprint-level dependency for strictness. [Kandasamy, Theorem 1.1](https://arxiv.org/abs/2610.15269)
 
 <a id="nine-budget"></a>
 

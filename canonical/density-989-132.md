@@ -13,7 +13,7 @@
             The edge pq is absent.                meets S in two subsumers.
 ~~~
 
-**Result.** Every finite simple graph $G$ with $\operatorname{mad}(G)\le989/132$ satisfies $\tau_\triangle(G)\le2\nu_\triangle(G)$. The limiting single-five nine in the previous proof has six seven-neighbors of high-neighbor count at least five. A second consequence of the same seven-link classification lowers the mixed-nine bound. Distributing the counting unit at its five across the three high subsumers then gives the coefficient $132/65$. The bound is inclusive. The inclusive endpoint uses Kandasamy’s maximum-degree-ten preprint.   · [Prior unrestricted accounting](donor-bounds.md#mixed)
+**Result.** Every finite simple graph $G$ with $\mathrm{mad}(G)\le989/132$ satisfies $\tau_\triangle(G)\le2\nu_\triangle(G)$. The limiting single-five nine in the previous proof has six seven-neighbors of high-neighbor count at least five. A second consequence of the same seven-link classification lowers the mixed-nine bound. Distributing the counting unit at its five across the three high subsumers then gives the coefficient $132/65$. The bound is inclusive. The inclusive endpoint uses Kandasamy’s maximum-degree-ten preprint.   · [Prior unrestricted accounting](donor-bounds.md#mixed)
 
 ### 1. What the old equality case actually forces
 

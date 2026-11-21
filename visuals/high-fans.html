@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-atFJMCxY4hZJONDSo20OsDV9lvugCVqy+TfVMA/yxDA='; style-src 'unsafe-inline'; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+<title>Two high fans on five vertices · Tuza’s inequality</title>
+<style>
+:root { color-scheme: light; --ink: #152e32; --muted: #415b60; --line: #bccac7; --paper: #faf9f4; --common: #286760; --first: #a3441d; --second: #305ba6; }
+* { box-sizing: border-box; }
+body { margin: 0; color: var(--ink); background: var(--paper); font: 16px/1.55 "Source Sans 3", "Helvetica Neue", Arial, sans-serif; }
+main { width: min(100% - 40px, 1020px); margin: 46px auto; }
+h1 { font: normal clamp(2.1rem, 5vw, 3.7rem)/1.08 "STIX Two Text", Georgia, serif; letter-spacing: -.035em; margin: 0 0 10px; }
+p { margin: 0; }
+.intro { color: var(--muted); max-width: 68ch; }
+figure { margin: 25px 0 12px; border-block: 1px solid var(--line); }
+.layout { display: grid; grid-template-columns: minmax(0,1.8fr) minmax(228px,.92fr); align-items: center; }
+.drawing { min-width: 0; }
+#solid { display: block; width: 100%; height: auto; touch-action: none; user-select: none; cursor: grab; overflow: visible; border-radius: 4px; }
+#solid.dragging { cursor: grabbing; }
+#solid:focus-visible, button:focus-visible, a:focus-visible { outline: 3px solid var(--second); outline-offset: 3px; }
+.vertex-label { font: italic 24px "STIX Two Text", Georgia, serif; fill: var(--ink); paint-order: stroke; stroke: var(--paper); stroke-width: 5px; stroke-linejoin: round; pointer-events: none; }
+.controls { padding: 28px 0 24px 12px; }
+fieldset { border: 0; padding: 0; margin: 0 0 15px; }
+legend { font-size: .87rem; font-weight: 650; margin-bottom: 6px; }
+.buttons { display: flex; flex-wrap: wrap; gap: 5px; }
+button { font: inherit; font-size: .87rem; line-height: 1.2; color: var(--ink); border: 1px solid #899d97; background: transparent; padding: 7px 11px; border-radius: 5px; cursor: pointer; }
+button[aria-pressed="true"] { background: #204b46; color: white; border-color: #204b46; }
+button:hover { border-color: var(--ink); }
+#details { min-height: 78px; margin: 12px 0 14px; }
+#details strong { display: block; font: normal 1.33rem/1.3 "STIX Two Text", Georgia, serif; }
+#details p, .hint, figcaption, .note { font-size: .91rem; color: var(--muted); }
+.legend { display: flex; gap: 6px 17px; flex-wrap: wrap; padding: 10px 0 15px; list-style: none; margin: 0; }
+.legend li { display: flex; align-items: center; gap: 6px; font-size: .9rem; }
+.swatch { width: 23px; border-top: 3px solid var(--common); }
+.swatch.first { border-color: var(--first); border-top-width: 5px; }
+.swatch.second { border-color: var(--second); border-top-width: 4px; border-top-style: dashed; }
+figcaption { padding: 12px 0; border-top: 1px solid #d5ddda; }
+.note { max-width: 80ch; }
+math, .math { font-family: "STIX Two Text", Georgia, serif; font-style: italic; }
+@media (max-width: 710px) { main { width: min(100% - 28px, 540px); margin: 25px auto; } .layout { grid-template-columns: 1fr; } .controls { padding: 0 0 12px; } #details { min-height: 0; } }
+@media print { main { margin: 0; width: 100%; } button, fieldset, .hint { display: none; } }
+</style>
+</head>
+<body>
+<main>
+<h1>Two high fans on five vertices</h1>
+<p class="intro">Both fans have center <i>a</i> and the same four spokes. Switch between them to see which rim edge changes.</p>
+<figure>
+<div class="layout">
+<div class="drawing">
+<svg xmlns="http://www.w3.org/2000/svg" id="solid" viewBox="0 0 560 370" role="img" tabindex="0" aria-labelledby="drawing-title drawing-desc" aria-keyshortcuts="ArrowLeft ArrowRight ArrowUp ArrowDown Home">
+<title id="drawing-title">Two overlapping high fans in three dimensions</title>
+<desc id="drawing-desc">The brown solid edge joins x to b. The blue dashed edge joins x to z. Drag or use the arrow keys to rotate. Home resets the view.</desc>
+<g id="geometry"></g>
+</svg>
+</div>
+<div class="controls">
+<fieldset><legend>Show</legend>
+<div class="buttons"><button type="button" data-mode="first" aria-pressed="false">First fan</button><button type="button" data-mode="second" aria-pressed="false">Second fan</button><button type="button" data-mode="both" aria-pressed="true">Both</button></div>
+</fieldset>
+<div id="details" aria-live="polite"><strong>Six edges in common</strong><p>The first fan uses <i>xb</i>. The second uses <i>xz</i>. Both use the other six edges.</p></div>
+<fieldset><legend>View</legend>
+<div class="buttons"><button type="button" data-view="oblique">Oblique</button><button type="button" data-view="above">From above</button><button type="button" data-view="side">Other side</button></div>
+</fieldset>
+<p class="hint">Drag to rotate, or focus the drawing and use the arrow keys.</p>
+</div>
+</div>
+<ul class="legend" aria-label="Edge key"><li><span class="swatch"></span>In both fans</li><li><span class="swatch first"></span>Only in the first</li><li><span class="swatch second"></span>Only in the second</li></ul>
+<figcaption>Each fan consists of four spokes and a three-edge rim path. The tinted regions are its graph triangles. Rotating the model preserves the incident edges.</figcaption>
+</figure>
+<p class="note">Theorem C counts different seven-edge sets. This example highlights two copies on the same five vertices. Their two rim paths together form a square. A vertex is high when it has degree at least eight in the full graph. Edges to the rest of that graph are omitted.</p>
+<noscript><p><a href="high-fans.svg">Open the two labeled static views.</a></p></noscript>
+</main>
+<script type="application/json" id="fan-data">
+{"center":"a","vertices":{"a":[0,1.24,0],"x":[-1,-0.55,1],"b":[1,-0.55,1],"c":[1,-0.55,-1],"z":[-1,-0.55,-1]},"rims":[["x","b","c","z"],["b","c","z","x"]]}
+</script>
+<script>
+"use strict";
+const fan = JSON.parse(document.getElementById("fan-data").textContent);
+const svgNS = "http://www.w3.org/2000/svg";
+const solid = document.getElementById("solid");
+const geometry = document.getElementById("geometry");
+const details = document.getElementById("details");
+const viewpoints = {oblique: [-0.51, 0.43], above: [-0.17, 1.52], side: [2.53, 0.31]};
+const paints = {
+  common: {line: "#286760", fill: "#72a79e", width: 3.2},
+  first: {line: "#a3441d", fill: "#e6a16f", width: 5.2},
+  second: {line: "#305ba6", fill: "#8eadd9", width: 4.5}
+};
+const key = (...ids) => ids.sort().join("");
+function register(store, members, index) {
+  const id = key(...members);
+  if (!store.has(id)) store.set(id, {members, inFans: new Set()});
+  store.get(id).inFans.add(index);
+}
+const edges = new Map(), faces = new Map();
+fan.rims.forEach((rim, index) => {
+  for (const vertex of rim) register(edges, [fan.center, vertex], index);
+  for (let j = 1; j < rim.length; j++) {
+    register(edges, [rim[j-1], rim[j]], index);
+    register(faces, [fan.center, rim[j-1], rim[j]], index);
+  }
+});
+let mode = "both";
+let [yaw, tilt] = viewpoints.oblique;
+function active(mark) {
+  return mode === "both" || mark.inFans.has(mode === "first" ? 0 : 1);
+}
+function kind(mark) {
+  if (mark.inFans.size === 2) return "common";
+  return mark.inFans.has(0) ? "first" : "second";
+}
+function project([x, y, z]) {
+  const horizontal = x * Math.cos(yaw) - z * Math.sin(yaw);
+  const forward = x * Math.sin(yaw) + z * Math.cos(yaw);
+  const up = y * Math.cos(tilt) - forward * Math.sin(tilt);
+  return {x: 280 + 126 * horizontal, y: 194 - 126 * up, depth: y * Math.sin(tilt) + forward * Math.cos(tilt)};
+}
+function node(tag, attrs, text) {
+  const el = document.createElementNS(svgNS, tag);
+  for (const [name, value] of Object.entries(attrs)) el.setAttribute(name, value);
+  if (text !== undefined) el.textContent = text;
+  return el;
+}
+function draw() {
+  const points = Object.fromEntries(Object.entries(fan.vertices).map(([v, xyz]) => [v, project(xyz)]));
+  const layer = document.createDocumentFragment();
+  function ordered(marks) {
+    const depth = mark => mark.members.reduce((sum,v) => sum + points[v].depth, 0) / mark.members.length;
+    return Array.from(marks.values()).filter(active).sort((a,b) => depth(a) - depth(b));
+  }
+  for (const face of ordered(faces)) {
+    const coords = face.members.map(v => points[v].x + "," + points[v].y).join(" ");
+    layer.append(node("polygon", {points: coords, fill: paints[kind(face)].fill, "fill-opacity": ".32", "data-face": key(...face.members)}));
+  }
+  for (const edge of ordered(edges)) {
+    const [p,q] = edge.members.map(v => points[v]);
+    const type = kind(edge), paint = paints[type];
+    const attrs = {x1:p.x, y1:p.y, x2:q.x, y2:q.y, stroke:paint.line, "stroke-width":paint.width,
+                   "stroke-linecap":"round", "data-edge":key(...edge.members)};
+    if (type === "second") attrs["stroke-dasharray"] = "9 5";
+    layer.append(node("line", attrs));
+  }
+  for (const [label,p] of Object.entries(points).sort((a,b) => a[1].depth - b[1].depth)) {
+    layer.append(node("circle", {"data-point":label, cx:p.x, cy:p.y, r:5, fill:"#faf9f4", stroke:"#203e3d", "stroke-width":2.3}));
+    const apex = label === fan.center;
+    const dx = apex ? 0 : (p.x < 280 ? -14 : 14);
+    const dy = apex ? -13 : (p.y > 218 ? 21 : -9);
+    layer.append(node("text", {x:p.x+dx, y:p.y+dy, "text-anchor":"middle", class:"vertex-label", "data-vertex":label}, label));
+  }
+  geometry.replaceChildren(layer);
+}
+const copy = {
+  both: ["Six edges in common", "The first fan uses xb. The second uses xz. Both use the other six edges."],
+  first: ["Rim x–b–c–z", "The faces are axb, abc and acz. The four spokes and three rim edges make seven edges."],
+  second: ["Rim b–c–z–x", "The faces are abc, acz and azx. Its last rim edge goes from z to x."]
+};
+for (const button of document.querySelectorAll("[data-mode]")) {
+  button.addEventListener("click", () => {
+    mode = button.dataset.mode;
+    for (const other of document.querySelectorAll("[data-mode]")) other.setAttribute("aria-pressed", other === button);
+    details.querySelector("strong").textContent = copy[mode][0];
+    details.querySelector("p").textContent = copy[mode][1];
+    document.getElementById("drawing-desc").textContent = copy[mode].join(". ") + " Use the arrow keys to rotate and Home to reset.";
+    draw();
+  });
+}
+for (const button of document.querySelectorAll("[data-view]")) {
+  button.addEventListener("click", () => { [yaw,tilt] = viewpoints[button.dataset.view]; draw(); });
+}
+function rotate(dx, dy) {
+  yaw += dx;
+  tilt = Math.max(-1.53, Math.min(1.53, tilt + dy));
+  draw();
+}
+let pointer = null;
+solid.addEventListener("pointerdown", event => {
+  if (pointer || event.button !== 0) return;
+  solid.setPointerCapture(event.pointerId);
+  pointer = {id:event.pointerId, x:event.clientX, y:event.clientY};
+  solid.classList.add("dragging");
+});
+solid.addEventListener("pointermove", event => {
+  if (!pointer || event.pointerId !== pointer.id) return;
+  rotate((event.clientX-pointer.x)*.009, (event.clientY-pointer.y)*.008);
+  pointer.x = event.clientX; pointer.y = event.clientY;
+});
+function release(event) {
+  if (pointer && pointer.id === event.pointerId) { pointer = null; solid.classList.remove("dragging"); }
+}
+solid.addEventListener("lostpointercapture", release);
+solid.addEventListener("pointercancel", release);
+solid.addEventListener("pointerup", release);
+solid.addEventListener("keydown", event => {
+  const moves = {ArrowLeft:[-.16,0], ArrowRight:[.16,0], ArrowUp:[0,.13], ArrowDown:[0,-.13]};
+  if (event.key === "Home") { event.preventDefault(); [yaw,tilt] = viewpoints.oblique; draw(); }
+  else if (moves[event.key]) { event.preventDefault(); rotate(...moves[event.key]); }
+});
+draw();
+</script>
+</body>
+</html>

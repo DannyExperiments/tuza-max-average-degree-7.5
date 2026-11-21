@@ -8,6 +8,7 @@ case "${1:-}" in
     *) echo 'Usage: bash scripts/verify.sh [--integrity-only]' >&2; exit 2 ;;
 esac
 python3 -B scripts/verify_tree.py
+python3 -B scripts/check_figure.py
 python3 -B scripts/check_paper.py paper/manuscript.pdf
 if [[ $# -eq 0 ]]; then
     python3 -B verification/run.py --max-order 9

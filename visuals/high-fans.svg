@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="290" viewBox="0 0 760 290" role="img" aria-labelledby="title description">
+  <title id="title">Two high fans on the same five vertices</title>
+  <desc id="description">The first fan has rim x–b–c–z and a solid copper edge xb. The second has rim b–c–z–x and a dashed blue edge xz. The four spokes from a, and the rim edges bc and cz, occur in both. The two drawings use the same view.</desc>
+  <rect width="760" height="290" rx="6" fill="#faf9f4" />
+  <path d="M380 21V269" stroke="#c8d3ce" stroke-width="1" />
+  <g id="fan-1">
+    <text font-family="Georgia, 'Times New Roman', serif" fill="#202f30" text-anchor="middle" x="190" y="31" font-size="22">First fan</text>
+    <polygon data-face="acz" points="190.000,50.703 221.150,136.541 79.765,169.509" fill="#85afa6" fill-opacity=".42" />
+    <polygon data-face="abc" points="190.000,50.703 300.235,195.480 221.150,136.541" fill="#85afa6" fill-opacity=".42" />
+    <polygon data-face="abx" points="190.000,50.703 158.850,228.448 300.235,195.480" fill="#e3a473" fill-opacity=".42" />
+    <line data-edge="cz" x1="221.150" y1="136.541" x2="79.765" y2="169.509" stroke="#286760" stroke-width="2.8" stroke-linecap="round" />
+    <line data-edge="bc" x1="300.235" y1="195.480" x2="221.150" y2="136.541" stroke="#286760" stroke-width="2.8" stroke-linecap="round" />
+    <line data-edge="ac" x1="190.000" y1="50.703" x2="221.150" y2="136.541" stroke="#286760" stroke-width="2.8" stroke-linecap="round" />
+    <line data-edge="az" x1="190.000" y1="50.703" x2="79.765" y2="169.509" stroke="#286760" stroke-width="2.8" stroke-linecap="round" />
+    <line data-edge="ab" x1="190.000" y1="50.703" x2="300.235" y2="195.480" stroke="#286760" stroke-width="2.8" stroke-linecap="round" />
+    <line data-edge="bx" x1="158.850" y1="228.448" x2="300.235" y2="195.480" stroke="#a3441d" stroke-width="4.4" stroke-linecap="round" />
+    <line data-edge="ax" x1="190.000" y1="50.703" x2="158.850" y2="228.448" stroke="#286760" stroke-width="2.8" stroke-linecap="round" />
+    <circle data-point="c" cx="221.150" cy="136.541" r="3.8" fill="#faf9f4" stroke="#243f3d" stroke-width="1.7" />
+    <text font-family="Georgia, 'Times New Roman', serif" fill="#202f30" text-anchor="middle" data-vertex="c" x="233.150" y="128.541" font-size="19" font-style="italic" stroke="#faf9f4" stroke-width="3" stroke-linejoin="round" paint-order="stroke">c</text>
+    <circle data-point="z" cx="79.765" cy="169.509" r="3.8" fill="#faf9f4" stroke="#243f3d" stroke-width="1.7" />
+    <text font-family="Georgia, 'Times New Roman', serif" fill="#202f30" text-anchor="middle" data-vertex="z" x="67.765" y="185.509" font-size="19" font-style="italic" stroke="#faf9f4" stroke-width="3" stroke-linejoin="round" paint-order="stroke">z</text>
+    <circle data-point="b" cx="300.235" cy="195.480" r="3.8" fill="#faf9f4" stroke="#243f3d" stroke-width="1.7" />
+    <text font-family="Georgia, 'Times New Roman', serif" fill="#202f30" text-anchor="middle" data-vertex="b" x="312.235" y="211.480" font-size="19" font-style="italic" stroke="#faf9f4" stroke-width="3" stroke-linejoin="round" paint-order="stroke">b</text>
+    <circle data-point="a" cx="190.000" cy="50.703" r="3.8" fill="#faf9f4" stroke="#243f3d" stroke-width="1.7" />
+    <text font-family="Georgia, 'Times New Roman', serif" fill="#202f30" text-anchor="middle" data-vertex="a" x="190.000" y="41.703" font-size="19" font-style="italic" stroke="#faf9f4" stroke-width="3" stroke-linejoin="round" paint-order="stroke">a</text>
+    <circle data-point="x" cx="158.850" cy="228.448" r="3.8" fill="#faf9f4" stroke="#243f3d" stroke-width="1.7" />
+    <text font-family="Georgia, 'Times New Roman', serif" fill="#202f30" text-anchor="middle" data-vertex="x" x="146.850" y="244.448" font-size="19" font-style="italic" stroke="#faf9f4" stroke-width="3" stroke-linejoin="round" paint-order="stroke">x</text>
+    <text font-family="Georgia, 'Times New Roman', serif" fill="#833819" text-anchor="middle" x="190" y="270" font-size="16">Rim  x – b – c – z</text>
+  </g>
+  <g id="fan-2">
+    <text font-family="Georgia, 'Times New Roman', serif" fill="#202f30" text-anchor="middle" x="570" y="31" font-size="22">Second fan</text>
+    <polygon data-face="acz" points="570.000,50.703 601.150,136.541 459.765,169.509" fill="#85afa6" fill-opacity=".42" />
+    <polygon data-face="abc" points="570.000,50.703 680.235,195.480 601.150,136.541" fill="#85afa6" fill-opacity=".42" />
+    <polygon data-face="axz" points="570.000,50.703 459.765,169.509 538.850,228.448" fill="#9ab1d9" fill-opacity=".42" />
+    <line data-edge="cz" x1="601.150" y1="136.541" x2="459.765" y2="169.509" stroke="#286760" stroke-width="2.8" stroke-linecap="round" />
+    <line data-edge="bc" x1="680.235" y1="195.480" x2="601.150" y2="136.541" stroke="#286760" stroke-width="2.8" stroke-linecap="round" />
+    <line data-edge="ac" x1="570.000" y1="50.703" x2="601.150" y2="136.541" stroke="#286760" stroke-width="2.8" stroke-linecap="round" />
+    <line data-edge="az" x1="570.000" y1="50.703" x2="459.765" y2="169.509" stroke="#286760" stroke-width="2.8" stroke-linecap="round" />
+    <line data-edge="xz" x1="459.765" y1="169.509" x2="538.850" y2="228.448" stroke="#305ba6" stroke-width="4.4" stroke-linecap="round" stroke-dasharray="7 4" />
+    <line data-edge="ab" x1="570.000" y1="50.703" x2="680.235" y2="195.480" stroke="#286760" stroke-width="2.8" stroke-linecap="round" />
+    <line data-edge="ax" x1="570.000" y1="50.703" x2="538.850" y2="228.448" stroke="#286760" stroke-width="2.8" stroke-linecap="round" />
+    <circle data-point="c" cx="601.150" cy="136.541" r="3.8" fill="#faf9f4" stroke="#243f3d" stroke-width="1.7" />
+    <text font-family="Georgia, 'Times New Roman', serif" fill="#202f30" text-anchor="middle" data-vertex="c" x="613.150" y="128.541" font-size="19" font-style="italic" stroke="#faf9f4" stroke-width="3" stroke-linejoin="round" paint-order="stroke">c</text>
+    <circle data-point="z" cx="459.765" cy="169.509" r="3.8" fill="#faf9f4" stroke="#243f3d" stroke-width="1.7" />
+    <text font-family="Georgia, 'Times New Roman', serif" fill="#202f30" text-anchor="middle" data-vertex="z" x="447.765" y="185.509" font-size="19" font-style="italic" stroke="#faf9f4" stroke-width="3" stroke-linejoin="round" paint-order="stroke">z</text>
+    <circle data-point="b" cx="680.235" cy="195.480" r="3.8" fill="#faf9f4" stroke="#243f3d" stroke-width="1.7" />
+    <text font-family="Georgia, 'Times New Roman', serif" fill="#202f30" text-anchor="middle" data-vertex="b" x="692.235" y="211.480" font-size="19" font-style="italic" stroke="#faf9f4" stroke-width="3" stroke-linejoin="round" paint-order="stroke">b</text>
+    <circle data-point="a" cx="570.000" cy="50.703" r="3.8" fill="#faf9f4" stroke="#243f3d" stroke-width="1.7" />
+    <text font-family="Georgia, 'Times New Roman', serif" fill="#202f30" text-anchor="middle" data-vertex="a" x="570.000" y="41.703" font-size="19" font-style="italic" stroke="#faf9f4" stroke-width="3" stroke-linejoin="round" paint-order="stroke">a</text>
+    <circle data-point="x" cx="538.850" cy="228.448" r="3.8" fill="#faf9f4" stroke="#243f3d" stroke-width="1.7" />
+    <text font-family="Georgia, 'Times New Roman', serif" fill="#202f30" text-anchor="middle" data-vertex="x" x="526.850" y="244.448" font-size="19" font-style="italic" stroke="#faf9f4" stroke-width="3" stroke-linejoin="round" paint-order="stroke">x</text>
+    <text font-family="Georgia, 'Times New Roman', serif" fill="#2c4e87" text-anchor="middle" x="570" y="270" font-size="16">Rim  b – c – z – x</text>
+  </g>
+</svg>

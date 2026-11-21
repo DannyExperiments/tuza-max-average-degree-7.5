@@ -17,7 +17,9 @@ jobs:
         with:
           persist-credentials: false
       - name: Verify the complete inventory
-        run: python3 -B scripts/verify_tree.py
+        run: |
+          python3 -B scripts/verify_tree.py
+          python3 -B scripts/check_figure.py
       - name: Inspect the frozen manuscript with the pinned PDF tools
         run: |
           docker run --rm --network=none --read-only --cap-drop=ALL --tmpfs /tmp \
